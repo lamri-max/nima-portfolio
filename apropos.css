@@ -1,0 +1,197 @@
+/* ===== HERO À PROPOS ===== */
+.apropos-hero {
+    background: linear-gradient(135deg, #252525 0%, #3a1a0a 100%);
+    color: white;
+    padding: 80px 80px;
+    text-align: center;
+}
+
+.apropos-hero h1 {
+    font-family: "Readex Pro", sans-serif;
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.apropos-hero h1 span {
+    color: var(--primary);
+}
+
+.apropos-hero p {
+    font-size: 18px;
+    color: #ccc;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+/* ===== HISTOIRE ===== */
+.histoire {
+    padding: 80px 80px;
+    display: flex;
+    gap: 60px;
+    align-items: center;
+    background: var(--bg-secondary);
+}
+
+.histoire-text {
+    flex: 1;
+}
+
+.histoire-text h2 {
+    font-family: "Readex Pro", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.histoire-text h2 span {
+    color: var(--primary);
+}
+
+.histoire-text p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-secondary);
+    margin-bottom: 16px;
+}
+
+.histoire-image {
+    flex: 1;
+}
+
+.histoire-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+}
+
+/* ===== MISSION VISION ===== */
+.mission-vision {
+    background: var(--bg-primary);
+    padding: 80px 80px;
+    display: flex;
+    gap: 30px;
+}
+
+.mv-card {
+    flex: 1;
+    background: white;
+    border-radius: 20px;
+    padding: 40px 36px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    border-top: 4px solid var(--primary);
+}
+
+.mv-card .mv-icon {
+    width: 64px;
+    height: 64px;
+    background: #fff3ee;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.mv-card h3 {
+    font-family: "Readex Pro", sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 12px;
+}
+
+.mv-card p {
+    font-size: 15px;
+    color: var(--text-secondary);
+    line-height: 1.8;
+}
+
+/* ===== VALEURS ===== */
+.valeurs {
+    padding: 80px 80px;
+    background: var(--bg-secondary);
+}
+
+.valeurs h2 {
+    font-family: "Readex Pro", sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.valeurs h2 span {
+    color: var(--primary);
+}
+
+.valeurs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.valeur-item {
+    background: var(--bg-primary);
+    border-radius: 16px;
+    padding: 30px 24px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    transition: transform 0.3s;
+}
+
+.valeur-item:hover {
+    transform: translateY(-4px);
+}
+
+.valeur-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--primary);
+    flex-shrink: 0;
+    margin-top: 6px;
+}
+
+.valeur-item h4 {
+    font-family: "Readex Pro", sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+}
+
+.valeur-item p {
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+}
+
+/* ===== QUOTE ===== */
+.quote-section {
+    background: var(--text-primary);
+    color: white;
+    padding: 80px;
+    text-align: center;
+}
+
+.quote-section blockquote {
+    font-family: "Readex Pro", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.5;
+    max-width: 800px;
+    margin: 0 auto 20px;
+}
+
+.quote-section blockquote span {
+    color: var(--primary);
+}
+
+.quote-section cite {
+    font-size: 14px;
+    color: #aaa;
+    font-style: italic;
+}
