@@ -254,3 +254,89 @@
 .btn-appstore:hover {
     background: #3a3a3a;
 }
+/* ===== RESPONSIVE MOBILE - produits.css ===== */
+/* Colle ce code À LA FIN de ton fichier produits.css (nosproduits.css) */
+
+@media (max-width: 768px) {
+
+    /* HERO */
+    .produits-hero {
+        padding: 50px 20px;
+    }
+
+    .produits-hero h1 {
+        font-size: 30px;
+    }
+
+    .produits-hero p {
+        font-size: 14px;
+    }
+
+    /* CATEGORIES */
+    .categories {
+        padding: 40px 20px;
+    }
+
+    .categories h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .categories-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    .categorie-card {
+        padding: 28px 20px;
+    }
+
+    /* PRODUITS VEDETTE */
+    .produits-vedette {
+        padding: 40px 20px;
+    }
+
+    .produits-vedette h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    /* COMMENT ÇA MARCHE */
+    .comment {
+        padding: 40px 20px;
+    }
+
+    .comment h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .etapes {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    /* CTA */
+    .cta-section {
+        padding: 40px 20px;
+    }
+
+    .cta-section h2 {
+        font-size: 26px;
+    }
+
+    .cta-section p {
+        font-size: 14px;
+    }
+
+    .btn-white {
+        width: 100%;
+        text-align: center;
+        padding: 14px 20px;
+    }
+
+    .btn-appstore {
+        justify-content: center;
+        width: 100%;
+    }
+}

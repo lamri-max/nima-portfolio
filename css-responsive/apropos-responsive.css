@@ -1,0 +1,72 @@
+/* ===== RESPONSIVE MOBILE - apropos.css ===== */
+/* Colle ce code À LA FIN de ton fichier apropos.css */
+
+@media (max-width: 768px) {
+
+    /* HERO */
+    .apropos-hero {
+        padding: 50px 20px;
+    }
+
+    .apropos-hero h1 {
+        font-size: 30px;
+    }
+
+    .apropos-hero p {
+        font-size: 14px;
+    }
+
+    /* HISTOIRE */
+    .histoire {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .histoire-text h2 {
+        font-size: 26px;
+    }
+
+    .histoire-text p {
+        font-size: 14px;
+    }
+
+    /* MISSION VISION */
+    .mission-vision {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .mv-card {
+        padding: 28px 20px;
+    }
+
+    .mv-card h3 {
+        font-size: 18px;
+    }
+
+    /* VALEURS */
+    .valeurs {
+        padding: 40px 20px;
+    }
+
+    .valeurs h2 {
+        font-size: 26px;
+        margin-bottom: 30px;
+    }
+
+    .valeurs-grid {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
+    /* QUOTE */
+    .quote-section {
+        padding: 50px 20px;
+    }
+
+    .quote-section blockquote {
+        font-size: 18px;
+    }
+}

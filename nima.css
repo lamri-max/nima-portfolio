@@ -328,3 +328,109 @@ footer p {
     width: 26px;
     height: 26px;
 }
+/* ===== RESPONSIVE MOBILE - nima.css ===== */
+/* Colle ce code À LA FIN de ton fichier nima.css */
+
+@media (max-width: 768px) {
+
+    /* NAVBAR */
+    header {
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    header img.logo {
+        height: 36px;
+    }
+
+    nav ul {
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul a {
+        font-size: 13px;
+    }
+
+    /* HERO */
+    .hero {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+        text-align: center;
+    }
+
+    .hero-text h1 {
+        font-size: 32px;
+    }
+
+    .hero-text p {
+        font-size: 14px;
+    }
+
+    .hero-text ul li {
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    .hero-image {
+        justify-content: center;
+        width: 100%;
+    }
+
+    .hero-image img {
+        width: 100%;
+        max-height: 300px;
+    }
+
+    .btn {
+        padding: 12px 24px;
+        font-size: 13px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* SERVICES */
+    .section-title {
+        padding: 40px 20px 24px;
+    }
+
+    .section-title h2 {
+        font-size: 26px;
+    }
+
+    .services {
+        flex-direction: column;
+        padding: 0 20px 40px;
+        gap: 16px;
+    }
+
+    .service-card {
+        padding: 24px 20px;
+    }
+
+    /* CONTACT */
+    .contact {
+        flex-direction: column;
+        padding: 40px 20px;
+        gap: 30px;
+    }
+
+    .contact-text h2 {
+        font-size: 26px;
+    }
+
+    /* FOOTER */
+    footer {
+        flex-direction: column;
+        padding: 30px 20px;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+}
