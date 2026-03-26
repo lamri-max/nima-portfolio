@@ -1,16 +1,39 @@
 /* ===== HERO À PROPOS ===== */
 .apropos-hero {
-    background: linear-gradient(135deg, #252525 0%, #3a1a0a 100%);
+    background: #111111;
     color: white;
-    padding: 80px 80px;
+    padding: 60px 20px 80px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.apropos-hero::before {
+    content: '';
+    position: absolute;
+    top: -30%;
+    left: 50%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(255, 69, 0, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
+    transform: translateX(-50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.apropos-hero-content {
+    max-width: 900px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 2;
 }
 
 .apropos-hero h1 {
     font-family: "Readex Pro", sans-serif;
-    font-size: 48px;
+    font-size: clamp(36px, 5vw, 48px);
     font-weight: 700;
     margin-bottom: 20px;
+    line-height: 1.2;
 }
 
 .apropos-hero h1 span {
@@ -19,17 +42,55 @@
 
 .apropos-hero p {
     font-size: 18px;
-    color: #ccc;
+    color: #cccccc;
     max-width: 700px;
     margin: 0 auto;
     line-height: 1.8;
 }
 
+.apropos-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.03);
+    padding: 24px 30px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    min-width: 200px;
+    backdrop-filter: blur(10px);
+}
+
+.stat-number {
+    font-family: "Readex Pro", sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 13px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
 /* ===== HISTOIRE ===== */
 .histoire {
-    padding: 80px 80px;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    gap: 60px;
+    gap: 50px;
     align-items: center;
     background: var(--bg-secondary);
 }
@@ -63,15 +124,20 @@
 .histoire-image img {
     width: 100%;
     border-radius: 20px;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
 }
 
 /* ===== MISSION VISION ===== */
 .mission-vision {
     background: var(--bg-primary);
-    padding: 80px 80px;
+    padding: 60px 5%;
     display: flex;
     gap: 30px;
+    justify-content: center;
+}
+
+.mission-vision>* {
+    max-width: 500px;
 }
 
 .mv-card {
@@ -79,7 +145,7 @@
     background: white;
     border-radius: 20px;
     padding: 40px 36px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
     border-top: 4px solid var(--primary);
 }
 
@@ -110,7 +176,9 @@
 
 /* ===== VALEURS ===== */
 .valeurs {
-    padding: 80px 80px;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
     background: var(--bg-secondary);
 }
 
@@ -171,30 +239,68 @@
 
 /* ===== QUOTE ===== */
 .quote-section {
-    background: var(--text-primary);
+    background: linear-gradient(135deg, #1f1f1f 0%, #111111 100%);
     color: white;
-    padding: 80px;
+    padding: 120px 20px;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-section::before {
+    content: '“';
+    position: absolute;
+    top: -60px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 400px;
+    line-height: 1;
+    color: rgba(255, 69, 0, 0.04);
+    font-family: Georgia, serif;
+    pointer-events: none;
+    z-index: 1;
 }
 
 .quote-section blockquote {
     font-family: "Readex Pro", sans-serif;
-    font-size: 28px;
-    font-weight: 600;
-    line-height: 1.5;
-    max-width: 800px;
-    margin: 0 auto 20px;
+    font-size: clamp(24px, 4vw, 36px);
+    font-weight: 500;
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    position: relative;
+    z-index: 2;
 }
 
 .quote-section blockquote span {
     color: var(--primary);
+    font-weight: 700;
 }
 
 .quote-section cite {
     font-size: 14px;
-    color: #aaa;
-    font-style: italic;
+    color: #aaaaaa;
+    font-style: normal;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
+
+.quote-section cite::before,
+.quote-section cite::after {
+    content: '';
+    display: inline-block;
+    width: 30px;
+    height: 2px;
+    background: var(--primary);
+}
+
 /* ===== RESPONSIVE MOBILE - apropos.css ===== */
 /* Colle ce code À LA FIN de ton fichier apropos.css */
 
@@ -267,4 +373,3 @@
         font-size: 18px;
     }
 }
-

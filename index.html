@@ -1,23 +1,394 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NIMA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="nima.css" rel="stylesheet"/>
+    <title>NIMA — Le marché nigérien dans votre poche</title>
+    <meta name="description"
+        content="NIMA est la plateforme e-commerce #1 au Niger. Achetez et vendez en toute simplicité avec livraison sécurisée. Téléchargez l'application gratuitement.">
+    <meta property="og:title" content="NIMA — Achetez et vendez en toute simplicité">
+    <meta property="og:description"
+        content="Le marché nigérien directement dans votre poche. Paiements sécurisés, livraison rapide.">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="nima.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="nima_logo_png_orange.png">
+    <style>
+        /* === PAGE-SPECIFIC: ACCUEIL === */
+
+        /* WHY NIMA */
+        .why-nima {
+            padding: var(--section-padding);
+            background: var(--bg-primary);
+        }
+
+        .why-nima h2 {
+            margin-bottom: 16px;
+        }
+
+        .why-nima .section-subtitle {
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: var(--fs-body);
+            max-width: 550px;
+            margin: 0 auto 50px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .why-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 40px 28px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.4s var(--ease-smooth);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .why-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.4s var(--ease-smooth);
+        }
+
+        .why-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .why-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .why-icon {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 32px;
+            background: rgba(255, 69, 0, 0.08);
+        }
+
+        .why-card h3 {
+            font-family: var(--font-heading);
+            font-size: var(--fs-h3);
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-primary);
+        }
+
+        .why-card p {
+            font-size: var(--fs-small);
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        /* DOWNLOAD SECTION */
+        .download-hero {
+            padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
+            background: var(--gradient-hero);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .download-hero::before {
+            content: '';
+            position: absolute;
+            top: -40%;
+            right: -15%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(255, 69, 0, 0.12) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .download-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255, 140, 66, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .download-inner {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .download-text {
+            flex: 1;
+        }
+
+        .download-text .tag {
+            display: inline-block;
+            background: rgba(255, 69, 0, 0.2);
+            color: #ff8c42;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 6px 16px;
+            border-radius: var(--radius-full);
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
+        }
+
+        .download-text h2 {
+            color: #ffffff;
+            text-align: left;
+            margin-bottom: 20px;
+            font-size: var(--fs-h1);
+        }
+
+        .download-text h2 span {
+            -webkit-text-fill-color: transparent;
+            background: linear-gradient(135deg, #FF4500, #FF8C42);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .download-text>p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: var(--fs-body);
+            line-height: 1.8;
+            margin-bottom: 30px;
+            max-width: 480px;
+        }
+
+        .dl-features {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            margin-bottom: 36px;
+        }
+
+        .dl-feature {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            color: rgba(255, 255, 255, 0.85);
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .dl-feature .dl-check {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background: var(--gradient-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .dl-buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .dl-buttons a {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            border-radius: var(--radius-md);
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s var(--ease-smooth);
+        }
+
+        .dl-btn-play {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: var(--shadow-primary);
+        }
+
+        .dl-btn-play:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 69, 0, 0.4);
+        }
+
+        .dl-btn-apple {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .dl-btn-apple:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .download-phone {
+            flex: 0 0 auto;
+            position: relative;
+        }
+
+        .download-phone img {
+            max-width: 320px;
+            filter: drop-shadow(0 20px 60px rgba(0, 0, 0, 0.4));
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* STATS COUNTER */
+        .stats-bar {
+            padding: 50px clamp(20px, 5vw, 80px);
+            background: var(--bg-secondary);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            max-width: var(--container-max);
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: var(--radius-lg);
+            background: var(--bg-primary);
+            transition: all 0.3s var(--ease-smooth);
+        }
+
+        .stat-item:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .stat-number {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            font-weight: 700;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 6px;
+        }
+
+        .stat-label {
+            font-size: var(--fs-small);
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* RESPONSIVE overrides */
+        @media (max-width: 1024px) {
+            .why-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .download-inner {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .download-text h2 {
+                text-align: center;
+            }
+
+            .dl-features {
+                align-items: center;
+            }
+
+            .dl-buttons {
+                justify-content: center;
+            }
+
+            .download-phone img {
+                max-width: 260px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .why-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .download-phone img {
+                max-width: 220px;
+            }
+
+            .dl-buttons {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .dl-buttons a {
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
+
 <body>
 
+    <!-- OVERLAY MOBILE -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
     <!-- HEADER -->
-    <header>
-        <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo"/>
-        <nav>
+    <header id="mainHeader">
+        <a href="index.html" class="logo-link">
+            <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="mainNav">
             <ul>
-                <li><a href="NIMA.HTML" class="active">Accueil</a></li>
+                <li><a href="index.html" class="active">Accueil</a></li>
                 <li><a href="apropos.html">À propos</a></li>
                 <li><a href="produits.html">Nos produits</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="aide.html">Aide</a></li>
+                <li><a href="aide.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -25,82 +396,339 @@
     <!-- HERO -->
     <section class="hero">
         <div class="hero-text">
-            <h1>Où <em>simplicité</em> s'allie avec <em>efficacité</em>.</h1>
-            <p>
-                <strong>NIMA</strong> est une entreprise qui s'appuie sur le développement d'une plateforme
-                e-commerce (application mobile) qui agit comme intermédiaire entre vendeurs et acheteurs.
+            <span class="hero-badge"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path
+                        d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                </svg> Bienvenue sur <em>NIMA</em></span>
+            <h1>Achetez et vendez en toute <em>simplicité</em>.</h1>
+            <p class="hero-subtitle">
+                Le marché nigérien directement dans votre poche. Que vous cherchiez à développer vos ventes ou à
+                dénicher de bonnes opportunités, nous vous connectons en toute sécurité.
             </p>
-            <p>Elle gère :</p>
-            <ul>
-                <li>La mise en ligne des produits</li>
-                <li>Les paiements sécurisés</li>
-                <li>La logistique et la livraison</li>
-            </ul>
-            <a href="#contact" class="btn">Un projet ? Écrivez-nous</a>
+            <div class="hero-features">
+                <div class="feature-item"><span class="check"><svg width="16" height="16" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg></span> Paiements sécurisés</div>
+                <div class="feature-item"><span class="check"><svg width="16" height="16" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg></span> Livraison rapide</div>
+                <div class="feature-item"><span class="check"><svg width="16" height="16" viewBox="0 0 24 24"
+                            fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                            stroke-linejoin="round">
+                            <polyline points="20 6 9 17 4 12"></polyline>
+                        </svg></span> Vendeurs de confiance</div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#store-links" class="btn btn-primary" id="hero-cta-download">Télécharger l'app</a>
+                <a href="apropos.html" class="btn btn-secondary">Découvrir NIMA</a>
+            </div>
         </div>
         <div class="hero-image">
-            <img src="backgrondfemme.png" alt="Shopping NIMA"/>
+            <img src="phone_mockup.png" alt="Application NIMA sur smartphone" loading="eager">
         </div>
     </section>
 
-    <!-- SERVICES -->
-    <div class="section-title">
-        <h2>Nos <span>services</span></h2>
-    </div>
-    <section class="services">
-        <div class="service-card">
-            <div class="service-icon">
-               <img src="icone_mise_en_ligne.svg" width="80" height="80" alt="Mise en ligne"/>
+    <!-- STATS BAR -->
+    <section class="stats-bar reveal">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <span class="stat-number" data-target="500">0</span>
+                <span class="stat-label">Produits disponibles</span>
             </div>
-            <h3>Mise en ligne</h3>
-            <p>Publiez vos produits facilement et touchez des milliers d'acheteurs en quelques clics.</p>
-        </div>
-        <div class="service-card">
-             <div class="service-icon">
-               <img src="icone_credit.svg" width="80" height="80" alt="Mise en ligne"/>
+            <div class="stat-item">
+                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-label">Catégories</span>
             </div>
-            <h3>Paiements sécurisés</h3>
-            <p>Transactions rapides et sécurisées pour vendeurs et acheteurs, sans stress.</p>
-        </div>
-        <div class="service-card">
-             <div class="service-icon">
-               <img src="icone_livraison.svg" width="80" height="80" alt="Mise en ligne"/>
+            <div class="stat-item">
+                <span class="stat-number" data-target="24">0</span>
+                <span class="stat-label">Livraison en heures</span>
             </div>
-            <h3>Livraison</h3>
-            <p>Nous gérons la logistique et la livraison pour que vous receviez vos commandes à temps.</p>
+            <div class="stat-item">
+                <span class="stat-number" data-target="100">0</span>
+                <span class="stat-label">% Sécurisé</span>
+            </div>
         </div>
     </section>
 
-    <!-- CONTACT -->
-    <section class="contact" id="contact">
-    <div class="contact-text">
-        <h2>Parlons de <span>vos suggestions</span></h2>
-        <p>Vous avez une remarque, une suggestion ou une question ? N'hésitez pas à nous contacter, nous serons ravis de vous répondre.</p>
-    </div>
-    <form class="contact-form" action="https://formspree.io/f/xnjgnvly" method="POST">
-        <input type="text" name="nom" placeholder="Votre nom"/>
-        <input type="email" name="email" placeholder="Votre email"/>
-        <textarea name="message" placeholder="Votre message"></textarea>
-        <button type="submit">Envoyer le message</button>
-    </form>
-</section>
+    <!-- POURQUOI NIMA -->
+    <section class="why-nima">
+        <h2 class="reveal">Pourquoi choisir <span>NIMA</span> ?</h2>
+        <p class="section-subtitle reveal">Une plateforme pensée pour les réalités nigériennes, accessible à tous.</p>
+        <div class="why-grid">
+            <div class="why-card reveal">
+                <div>
+                    <img src="icone_sécurité.svg" alt="Sécurité" width="60" height="60">
+
+                </div>
+                <h3>Sécurité garantie</h3>
+                <p>Chaque transaction est protégée. Vos paiements et données sont en sécurité avec NIMA.</p>
+            </div>
+            <div class="why-card reveal">
+                <div>
+                    <img src="icone_livraison.svg" alt="Livraison" width="60" height="60">
+                </div>
+                <h3>Livraison rapide</h3>
+                <p>Recevez vos commandes directement chez vous en 24h grâce à notre réseau de livreurs.</p>
+            </div>
+            <div class="why-card reveal">
+                <div>
+                    <img src="icone_credit.svg" alt="Paiement" width="60" height="60">
+                </div>
+                <h3>Paiement flexible</h3>
+                <p>Payez avec myNita/Amana, à la livraison ou par carte. Pas besoin de compte bancaire.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- COMMENT ÇA MARCHE -->
+    <section class="comment" style="background: var(--bg-secondary);">
+        <h2 class="reveal">Comment ça <span>marche ?</span></h2>
+        <div class="etapes">
+            <div class="etape reveal">
+                <div class="etape-number">1</div>
+                <h3>Parcourez</h3>
+                <p>Trouvez vos produits favoris ou découvrez de nouvelles boutiques locales.</p>
+            </div>
+            <div class="etape reveal">
+                <div class="etape-number">2</div>
+                <h3>Commandez</h3>
+                <p>Passez commande facilement et en toute sécurité via l'application.</p>
+            </div>
+            <div class="etape reveal">
+                <div class="etape-number">3</div>
+                <h3>Payez</h3>
+                <p>Payez en liquide à la livraison ou via mobile money en toute sérénité.</p>
+            </div>
+            <div class="etape reveal">
+                <div class="etape-number">4</div>
+                <h3>Recevez</h3>
+                <p>NIMA gère la logistique et livre vos achats directement chez vous.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORIES -->
+    <section class="categories">
+        <h2 class="reveal">Découvrez nos <span>catégories</span></h2>
+        <div class="categories-grid">
+            <div class="categorie-card reveal" onclick="window.location.href='produits.html'">
+                <div class="categorie-icon">
+                    <img src="icone_phone.svg" width="64" height="64" alt="High-Tech" loading="lazy">
+                </div>
+                <h3>High-Tech</h3>
+                <p>Smartphones, ordinateurs, accessoires et équipements informatiques.</p>
+            </div>
+            <div class="categorie-card reveal" onclick="window.location.href='produits.html'">
+                <div class="categorie-icon">
+                    <img src="icone_vêtement.svg" width="64" height="64" alt="Mode" loading="lazy">
+                </div>
+                <h3>Mode & Beauté</h3>
+                <p>Habits, chaussures, cosmétiques et indispensables du quotidien.</p>
+            </div>
+            <div class="categorie-card reveal" onclick="window.location.href='produits.html'">
+                <div class="categorie-icon">
+                    <img src="icone_maison.svg" width="64" height="64" alt="Maison" loading="lazy">
+                </div>
+                <h3>Maison & Épicerie</h3>
+                <p>Meubles, alimentation, décoration et ustensiles de cuisine.</p>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px;">
+            <a href="produits.html" class="btn btn-secondary">Voir tous les produits</a>
+        </div>
+    </section>
+
+    <!-- TELECHARGEMENT -->
+    <section class="download-hero" id="download">
+        <div class="download-inner">
+            <div class="download-text reveal-left">
+                <span class="tag"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 6px;">
+                        <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                        <line x1="12" y1="18" x2="12.01" y2="18"></line>
+                    </svg>Application gratuite</span>
+                <h2>Emportez le <span>marché</span> avec vous</h2>
+                <p>La meilleure expérience d'achat et de vente au Niger se trouve dans votre poche. Téléchargez
+                    l'application gratuite NIMA dès aujourd'hui.</p>
+                <div class="dl-features">
+                    <div class="dl-feature"><span class="dl-check"><svg width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg></span> Catalogue complet & actualisé</div>
+                    <div class="dl-feature"><span class="dl-check"><svg width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg></span> Notifications de promotions</div>
+                    <div class="dl-feature"><span class="dl-check"><svg width="14" height="14" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round"
+                                stroke-linejoin="round">
+                                <polyline points="20 6 9 17 4 12"></polyline>
+                            </svg></span> Suivi de commande en temps réel</div>
+                </div>
+                <div class="dl-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.mycompany.nimaclient" target="_blank"
+                        class="dl-btn-play" id="btn-dl-playstore">▶ Play Store</a>
+                    <a href="https://apps.apple.com/us/app/nima-achat-en-ligne-au-niger/id6759831417" target="_blank"
+                        class="dl-btn-apple" id="btn-dl-appstore"> App Store</a>
+                </div>
+            </div>
+            <div class="download-phone reveal-right">
+                <img src="phone_mockup.png" alt="Application NIMA" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA AIDE -->
+    <section class="cta-section">
+        <h2>Une question ou une suggestion ?</h2>
+        <p>Notre équipe est 100% à votre écoute pour vous accompagner sur NIMA.</p>
+        <a href="aide.html" class="btn-white">Accéder au centre d'aide</a>
+    </section>
 
     <!-- FOOTER -->
-    <footer>
-        <img class="logo" src="nima_logo_png_orange.png" alt="NIMA"/>
-        <p>© 2026 NIMA — Tous droits réservés</p>
-        <div class="footer-socials">
-            <a href="https://www.instagram.com/nima_niger?igsh=OHUzamtlNzE2ZnRz&utm_source=qr">
-                <img src="insta_logo.png" alt="Instagram"/>
-            </a>
-            <a href="https://www.tiktok.com/@nima8325?_r=1&_t=ZM-92QzlF3MJWW">
-                <img src="tiktok_logo.png" alt="TikTok"/>
-            </a>
-            <a href="https://www.facebook.com/share/1DTiAnZHnp/?mibextid=wwXIfr">
-                <img src="facebook_logo.png" alt="Facebook"/>
-            </a>
+    <footer class="footer-pro">
+        <div class="footer-content">
+            <div class="footer-sec brandinfo">
+                <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+                <p>NIMA est l'intermédiaire de confiance pour faciliter vos achats et ventes avec une sécurité garantie.
+                </p>
+            </div>
+            <div class="footer-sec socials">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nima_niger?igsh=OHUzamtlNzE2ZnRz&utm_source=qr" target="_blank"
+                        title="Instagram NIMA" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@nima8325?_r=1&_t=ZM-92QzlF3MJWW" target="_blank"
+                        title="TikTok NIMA" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.85 4.85 0 01-1-.15z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/share/1DTiAnZHnp/?mibextid=wwXIfr" target="_blank"
+                        title="Facebook NIMA" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-sec apps" id="store-links">
+                <h3>Téléchargez l'application</h3>
+                <div class="store-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.mycompany.nimaclient" target="_blank"
+                        class="store-btn-google"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333L13.5 12.707zM5.864 2.658L16.8 8.99l-2.302 2.302L6.864 2.658zM20.16 10.95c.549.394.84.91.84 1.05 0 .14-.291.656-.84 1.05l-2.43 1.41-2.534-2.46 2.534-2.46 2.43 1.41z" />
+                        </svg> Play Store</a>
+                    <a href="https://apps.apple.com/us/app/nima-achat-en-ligne-au-niger/id6759831417" target="_blank"
+                        class="store-btn-apple"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                        </svg> App Store</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NIMA — Tous droits réservés.</p>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT -->
+    <script>
+        // === Hamburger Menu ===
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('mainNav');
+        const overlay = document.getElementById('navOverlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mainNav.classList.toggle('open');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+        });
+
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mainNav.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // Close on nav link click (mobile)
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mainNav.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // === Header scroll effect ===
+        window.addEventListener('scroll', () => {
+            document.getElementById('mainHeader').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // === Scroll Reveal ===
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // === Counter Animation ===
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number[data-target]');
+            counters.forEach(counter => {
+                const target = +counter.dataset.target;
+                const duration = 2000;
+                const startTime = performance.now();
+
+                function update(currentTime) {
+                    const elapsed = currentTime - startTime;
+                    const progress = Math.min(elapsed / duration, 1);
+                    const eased = 1 - Math.pow(1 - progress, 3);
+                    counter.textContent = Math.floor(target * eased);
+                    if (progress < 1) requestAnimationFrame(update);
+                    else counter.textContent = target;
+                }
+                requestAnimationFrame(update);
+            });
+        }
+
+        const statsSection = document.querySelector('.stats-bar');
+        if (statsSection) {
+            const statsObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        animateCounters();
+                        statsObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            statsObserver.observe(statsSection);
+        }
+    </script>
+
 </body>
+
 </html>

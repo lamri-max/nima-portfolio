@@ -1,122 +1,179 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NIMA - À propos</title>
-    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-    <link href="nima.css" rel="stylesheet"/>
-    <link href="apropos.css" rel="stylesheet"/>
+    <title>NIMA — À propos | Notre vision pour le Niger</title>
+    <meta name="description"
+        content="Découvrez la vision, la mission et les valeurs de NIMA. La plateforme e-commerce pensée pour les réalités nigériennes, accessible à tous.">
+    <meta property="og:title" content="NIMA — À propos de nous">
+    <meta property="og:description"
+        content="NIMA est la référence nigérienne du e-commerce. Simple, fiable et accessible à tous.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link href="nima.css" rel="stylesheet">
+    <link href="apropos.css" rel="stylesheet">
+    <link href="apropos-responsive.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="nima_logo_png_orange.png">
+
 </head>
+
 <body>
 
+    <!-- OVERLAY MOBILE -->
+    <div class="nav-overlay" id="navOverlay"></div>
+
     <!-- HEADER -->
-    <header>
-        <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo"/>
-        <nav>
+    <header id="mainHeader">
+        <a href="index.html" class="logo-link">
+            <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <nav id="mainNav">
             <ul>
                 <li><a href="index.html">Accueil</a></li>
                 <li><a href="apropos.html" class="active">À propos</a></li>
                 <li><a href="produits.html">Nos produits</a></li>
-                <li><a href="index.html#contact">Contact</a></li>
+                <li><a href="aide.html">Aide</a></li>
+                <li><a href="aide.html#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- HERO -->
     <section class="apropos-hero">
-        <h1>La <span>nigérienne</span> du marché</h1>
-        <p>NIMA est la plateforme e-commerce pensée pour les réalités nigériennes. Simple, fiable et accessible à tous — vendeurs comme acheteurs, en ville comme en zone rurale.</p>
+        <div class="apropos-hero-content">
+            <h1>La <span>référence nigérienne</span> du e-commerce</h1>
+            <p>NIMA est la plateforme e-commerce pensée pour les réalités nigériennes. Simple, fiable et accessible à
+                tous — vendeurs comme acheteurs, en ville comme en zone rurale.</p>
+            <div class="apropos-stats">
+                <div class="stat">
+                    <span class="stat-number">+10 000</span>
+                    <span class="stat-label">Produits Locaux</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Sécurisé & Fiable</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Support Client</span>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- HISTOIRE -->
-    <section class="histoire">
-        <div class="histoire-text">
-            <h2>Qui sommes <span>nous ?</span></h2>
-            <p>Au Niger, les marchés restent fragmentés : les vendeurs ont des produits de qualité mais peinent à élargir leur clientèle, tandis que de nombreux consommateurs recherchent ces mêmes produits sans pouvoir y accéder facilement.</p>
-            <p>Les obstacles sont connus : manque d'outils numériques adaptés, logistique limitée, barrières d'accès aux paiements. <strong>NIMA est né pour y répondre.</strong></p>
-            <p>NIMA est une plateforme e-commerce simple et inclusive qui connecte vendeurs et acheteurs partout au Niger. Conçue pour nos réalités, elle fonctionne même sans smartphone sophistiqué ni compte bancaire — parce que le commerce numérique doit être accessible à tous.</p>
-        </div>
-        <div class="histoire-image">
-            <img src="backgrondfemme.png" alt="NIMA"/>
+    <section style="padding: 0; background: var(--bg-secondary);">
+        <div class="histoire reveal">
+            <div class="histoire-text reveal-left">
+                <h2>Qui sommes <span>nous ?</span></h2>
+                <p>Au Niger, les marchés restent fragmentés : les vendeurs ont des produits de qualité mais peinent à
+                    élargir leur clientèle, tandis que de nombreux consommateurs recherchent ces mêmes produits sans
+                    pouvoir
+                    y accéder facilement.</p>
+                <p>Les obstacles sont connus : manque d'outils numériques adaptés, logistique limitée, barrières d'accès
+                    aux
+                    paiements. <strong>NIMA est né pour y répondre.</strong></p>
+                <p>NIMA est une plateforme e-commerce simple et inclusive qui connecte vendeurs et acheteurs partout au
+                    Niger. Conçue pour nos réalités, elle fonctionne même sans smartphone sophistiqué ni compte bancaire
+                    —
+                    parce que le commerce numérique doit être accessible à tous.</p>
+            </div>
+            <div class="histoire-image reveal-right">
+                <img src="backgrondfemme.png" alt="NIMA" loading="lazy">
+            </div>
         </div>
     </section>
 
     <!-- MISSION & VISION -->
-    <section class="mission-vision">
-        <div class="mv-card">
-            <div class="mv-icon">
-               <img src="MISSION.svg" width="50" height="50" alt="Mission"/>
-            </div>
-            <h3>Notre Mission</h3>
-            <p>Offrir aux Nigériens un marché numérique fiable, accessible et adapté à leurs réalités, pour faciliter le quotidien et stimuler l'économie locale.</p>
-        </div>
-        <div class="mv-card">
-            <div class="mv-icon">
-                 <!-- Vision -->
-                 <div class="mv-icon">
-                    <img src="vision.svg" width="50" height="50" alt="Vision"/>
+    <section style="background: var(--bg-primary); padding: var(--section-padding);">
+        <h2 class="reveal" style="margin-bottom: 50px;">Notre <span>mission</span> & vision</h2>
+        <div class="mission-vision" style="padding: 0;">
+            <div class="mv-card reveal">
+                <div class="mv-icon">
+                    <img src="MISSION.svg" width="56" height="56" alt="Mission" loading="lazy">
                 </div>
+                <h3>Notre Mission</h3>
+                <p>Offrir aux Nigériens un marché numérique fiable, accessible et adapté à leurs réalités, pour
+                    faciliter le
+                    quotidien et stimuler l'économie locale.</p>
             </div>
-            <h3>Notre Vision</h3>
-            <p>Accélérer la transition vers les solutions numériques au Niger. Faire de NIMA le symbole de la modernisation du commerce nigérien et un levier pour l'inclusion économique.</p>
-        </div>
-        <div class="mv-card">
-            <div class="mv-icon">
-              <img src="ambition.svg" width="50" height="50" alt="ambition"/>
+            <div class="mv-card reveal">
+                <div class="mv-icon">
+                    <img src="vision.svg" width="56" height="56" alt="Vision" loading="lazy">
+                </div>
+                <h3>Notre Vision</h3>
+                <p>Accélérer la transition vers les solutions numériques au Niger. Faire de NIMA le symbole de la
+                    modernisation du commerce nigérien et un levier pour l'inclusion économique.</p>
             </div>
-            <h3>Notre Ambition</h3>
-            <p>Derrière NIMA, il y a une conviction profonde : le commerce nigérien mérite mieux.
-              Mieux que les obstacles, mieux que la distance, mieux que la méfiance. Notre
-              ambition, c'est un Niger où acheter et vendre soit aussi simple qu'une conversation entre voisins.
-            </p>
+            <div class="mv-card reveal">
+                <div class="mv-icon">
+                    <img src="ambition.svg" width="56" height="56" alt="Ambition" loading="lazy">
+                </div>
+                <h3>Notre Ambition</h3>
+                <p>Derrière NIMA, il y a une conviction profonde : le commerce nigérien mérite mieux.
+                    Notre ambition, c'est un Niger où acheter et vendre soit aussi simple qu'une conversation entre
+                    voisins.</p>
+            </div>
         </div>
     </section>
 
     <!-- VALEURS -->
     <section class="valeurs">
-        <h2>Nos <span>valeurs</span></h2>
+        <h2 class="reveal">Nos <span>valeurs</span></h2>
         <div class="valeurs-grid">
-            <div class="valeur-item">
+            <div class="valeur-item reveal">
                 <div class="valeur-dot"></div>
                 <div>
                     <h4>Confiance</h4>
-                    <p>Nous bâtissons une relation de confiance entre vendeurs, acheteurs et livreurs à chaque transaction.</p>
+                    <p>Nous bâtissons une relation de confiance entre vendeurs, acheteurs et livreurs à chaque
+                        transaction.</p>
                 </div>
             </div>
-            <div class="valeur-item">
+            <div class="valeur-item reveal">
                 <div class="valeur-dot"></div>
                 <div>
                     <h4>Inclusion</h4>
                     <p>NIMA est conçue pour tous les Nigériens, même sans smartphone sophistiqué ni compte bancaire.</p>
                 </div>
             </div>
-            <div class="valeur-item">
+            <div class="valeur-item reveal">
                 <div class="valeur-dot"></div>
                 <div>
                     <h4>Innovation locale</h4>
-                    <p>Pas une copie des modèles étrangers, mais une solution pensée pour et avec les réalités nigériennes.</p>
+                    <p>Pas une copie des modèles étrangers, mais une solution pensée pour et avec les réalités
+                        nigériennes.</p>
                 </div>
             </div>
-            <div class="valeur-item">
+            <div class="valeur-item reveal">
                 <div class="valeur-dot"></div>
                 <div>
                     <h4>Impact social</h4>
                     <p>Être rentable tout en ayant un impact social positif sur la jeunesse et l'économie locale.</p>
                 </div>
             </div>
-            <div class="valeur-item">
+            <div class="valeur-item reveal">
                 <div class="valeur-dot"></div>
                 <div>
                     <h4>Proximité</h4>
                     <p>Reproduire la chaleur et l'authenticité du marché nigérien dans un environnement numérique.</p>
                 </div>
             </div>
-            <div class="valeur-item">
+            <div class="valeur-item reveal">
                 <div class="valeur-dot"></div>
                 <div>
                     <h4>Responsabilité</h4>
-                    <p>Chaque membre de l'équipe est conscient de sa responsabilité envers son pays et sa génération.</p>
+                    <p>Chaque membre de l'équipe est conscient de sa responsabilité envers son pays et sa génération.
+                    </p>
                 </div>
             </div>
         </div>
@@ -124,26 +181,123 @@
 
     <!-- QUOTE -->
     <section class="quote-section">
-        <blockquote>« <span>Produisons</span> ce dont nous avons besoin, et <span>consommons</span> ce que nous produisons. »</blockquote>
-        <cite>Thomas Sankara, ancien Président du Burkina Faso</cite>
+        <blockquote>
+            « Plus qu'une simple <span>application</span>, NIMA est le pont numérique qui relie les marchands à tous les
+            foyers du <span>Niger</span>. »
+        </blockquote>
+        <cite>La vision NIMA</cite>
+    </section>
+
+    <!-- CTA AIDE -->
+    <section class="cta-section">
+        <h2>Besoin d'aide ou d'informations supplémentaires ?</h2>
+        <p>Consultez notre base de connaissances ou contactez notre équipe pour toute question.</p>
+        <a href="aide.html" class="btn-white">Accéder au centre d'aide</a>
     </section>
 
     <!-- FOOTER -->
-    <footer>
-        <img class="logo" src="nima_logo_png_orange.png" alt="NIMA"/>
-        <p>© 2026 NIMA — Tous droits réservés</p>
-        <div class="footer-socials">
-            <a href="https://www.instagram.com/nima_niger?igsh=OHUzamtlNzE2ZnRz&utm_source=qr">
-                <img src="insta_logo.png" alt="Instagram"/>
-            </a>
-            <a href="https://www.tiktok.com/@nima8325?_r=1&_t=ZM-92QzlF3MJWW">
-                <img src="tiktok_logo.png" alt="TikTok"/>
-            </a>
-            <a href="https://www.facebook.com/share/1DTiAnZHnp/?mibextid=wwXIfr">
-                <img src="facebook_logo.png" alt="Facebook"/>
-            </a>
+    <footer class="footer-pro">
+        <div class="footer-content">
+            <div class="footer-sec brandinfo">
+                <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+                <p>NIMA est l'intermédiaire de confiance pour faciliter vos achats et ventes avec une sécurité garantie.
+                </p>
+            </div>
+            <div class="footer-sec socials">
+                <h3>Suivez-nous</h3>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/nima_niger?igsh=OHUzamtlNzE2ZnRz&utm_source=qr" target="_blank"
+                        title="Instagram NIMA" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@nima8325?_r=1&_t=ZM-92QzlF3MJWW" target="_blank"
+                        title="TikTok NIMA" aria-label="TikTok">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.85 4.85 0 01-1-.15z" />
+                        </svg>
+                    </a>
+                    <a href="https://www.facebook.com/share/1DTiAnZHnp/?mibextid=wwXIfr" target="_blank"
+                        title="Facebook NIMA" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-sec apps" id="store-links">
+                <h3>Téléchargez l'application</h3>
+                <div class="store-buttons">
+                    <a href="https://play.google.com/store/apps/details?id=com.mycompany.nimaclient" target="_blank"
+                        class="store-btn-google"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333L13.5 12.707zM5.864 2.658L16.8 8.99l-2.302 2.302L6.864 2.658zM20.16 10.95c.549.394.84.91.84 1.05 0 .14-.291.656-.84 1.05l-2.43 1.41-2.534-2.46 2.534-2.46 2.43 1.41z" />
+                        </svg> Play Store</a>
+                    <a href="https://apps.apple.com/us/app/nima-achat-en-ligne-au-niger/id6759831417" target="_blank"
+                        class="store-btn-apple"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                        </svg> App Store</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 NIMA — Tous droits réservés.</p>
         </div>
     </footer>
 
+    <!-- JAVASCRIPT -->
+    <script>
+        // === Hamburger Menu ===
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('mainNav');
+        const overlay = document.getElementById('navOverlay');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mainNav.classList.toggle('open');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+        });
+
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mainNav.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mainNav.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
+        // === Header scroll ===
+        window.addEventListener('scroll', () => {
+            document.getElementById('mainHeader').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // === Scroll Reveal ===
+        const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('revealed');
+                    revealObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.15 });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+
 </body>
+
 </html>
