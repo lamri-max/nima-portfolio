@@ -30,7 +30,7 @@
     <!-- HEADER -->
     <header id="mainHeader">
         <a href="index.html" class="logo-link">
-            <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+            <img src="nima_logoFinal.png" alt="Nima" style="height: 50px; width: auto;">
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span>
@@ -56,7 +56,7 @@
                 tous — vendeurs comme acheteurs, en ville comme en zone rurale.</p>
             <div class="apropos-stats">
                 <div class="stat">
-                    <span class="stat-number">+10 000</span>
+                    <span class="stat-number">Plusieurs</span>
                     <span class="stat-label">Produits Locaux</span>
                 </div>
                 <div class="stat">
@@ -199,7 +199,7 @@
     <footer class="footer-pro">
         <div class="footer-content">
             <div class="footer-sec brandinfo">
-                <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+                <img src="nima_logoFinal.png" alt="Nima" style="height: 50px; width: auto;">
                 <p>NIMA est l'intermédiaire de confiance pour faciliter vos achats et ventes avec une sécurité garantie.
                 </p>
             </div>
@@ -272,12 +272,20 @@
         });
 
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mainNav.classList.remove('open');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+          link.addEventListener('click', (e) => {
+         hamburger.classList.remove('active');
+         mainNav.classList.remove('open');
+         overlay.classList.remove('active');
+         document.body.style.overflow = '';
+        
+         const href = link.getAttribute('href');
+         if (href && href !== '#') {
+            e.preventDefault();
+            setTimeout(() => {
+                window.location.href = href;
+            }, 150);
+           }
+          });
         });
 
         // === Header scroll ===

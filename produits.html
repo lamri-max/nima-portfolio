@@ -30,7 +30,7 @@
     <!-- HEADER -->
     <header id="mainHeader">
         <a href="index.html" class="logo-link">
-            <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+            <img src="nima_logoFinal.png" alt="Nima" style="height: 50px; width: auto;">
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span>
@@ -57,19 +57,19 @@
             <p>NIMA réinvente le marché nigérien avec les outils d'aujourd'hui. Des centaines de produits vérifiés,
                 livrés chez vous en toute sécurité.</p>
             <div class="hero-stats">
-                <div class="hero-stat">
-                    <strong>500+</strong>
-                    <span>Produits</span>
-                </div>
-                <div class="hero-stat">
-                    <strong>6</strong>
-                    <span>Catégories</span>
-                </div>
-                <div class="hero-stat">
-                    <strong>24h</strong>
-                    <span>Livraison</span>
-                </div>
-            </div>
+    <div class="hero-stat">
+        <strong data-words="Beaucoup,Des centaines,Enormément,Plein,Plusieurs">0</strong>
+        <span>Produits</span>
+    </div>
+    <div class="hero-stat">
+        <strong data-letters="true">0</strong>
+        <span>Catégories</span>
+    </div>
+     <div class="hero-stat">
+        <strong data-target="24" data-suffix="h">0</strong>
+        <span>Livraison</span>
+     </div>
+    </div>
         </div>
     </section>
 
@@ -217,7 +217,7 @@
     <footer class="footer-pro">
         <div class="footer-content">
             <div class="footer-sec brandinfo">
-                <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+                <img src="nima_logoFinal.png" alt="Nima" style="height: 50px; width: auto;">
                 <p>NIMA est l'intermédiaire de confiance pour faciliter vos achats et ventes avec une sécurité garantie.
                 </p>
             </div>
@@ -324,12 +324,20 @@
         });
 
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mainNav.classList.remove('open');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+          link.addEventListener('click', (e) => {
+         hamburger.classList.remove('active');
+         mainNav.classList.remove('open');
+         overlay.classList.remove('active');
+         document.body.style.overflow = '';
+        
+         const href = link.getAttribute('href');
+         if (href && href !== '#') {
+            e.preventDefault();
+            setTimeout(() => {
+                window.location.href = href;
+            }, 150);
+           }
+          });
         });
 
         // === Header scroll ===
@@ -351,24 +359,58 @@
 
         // === Counter animation for hero stats ===
         function animateCounters() {
-            const stats = document.querySelectorAll('.hero-stat strong');
-            stats.forEach(stat => {
-                const text = stat.textContent;
-                const num = parseInt(text);
-                if (isNaN(num)) return;
-                const suffix = text.replace(/[0-9]/g, '');
-                let current = 0;
-                const increment = num / 40;
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= num) {
-                        current = num;
-                        clearInterval(timer);
-                    }
-                    stat.textContent = Math.floor(current) + suffix;
-                }, 30);
-            });
+    const stats = document.querySelectorAll('.hero-stat strong');
+    stats.forEach(stat => {
+
+        // Défilement de mots → "Plusieurs"
+        if (stat.dataset.words) {
+            const words = stat.dataset.words.split(',');
+            let i = 0;
+            const timer = setInterval(() => {
+                if (i < words.length - 1) {
+                    stat.textContent = words[i];
+                    i++;
+                } else {
+                    stat.textContent = words[words.length - 1];
+                    clearInterval(timer);
+                }
+            }, 300);
+
+        // Défilement de lettres → "N"
+        } else if (stat.dataset.letters) {
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const duration = 2000;
+            const startTime = performance.now();
+            function updateText(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                if (progress < 1) {
+                    stat.textContent = letters[Math.floor(Math.random() * letters.length)];
+                    requestAnimationFrame(updateText);
+                } else {
+                    stat.textContent = 'N';
+                }
+            }
+            requestAnimationFrame(updateText);
+
+        // Défilement de chiffres → "24h"
+        } else if (stat.dataset.target) {
+            const target = +stat.dataset.target;
+            const suffix = stat.dataset.suffix || '';
+            const duration = 2000;
+            const startTime = performance.now();
+            function update(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                const eased = 1 - Math.pow(1 - progress, 3);
+                stat.textContent = Math.floor(target * eased) + suffix;
+                if (progress < 1) requestAnimationFrame(update);
+                else stat.textContent = target + suffix;
+            }
+            requestAnimationFrame(update);
         }
+    });
+}
 
         window.addEventListener('load', () => setTimeout(animateCounters, 600));
     </script>

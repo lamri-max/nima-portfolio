@@ -5,13 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NIMA — Centre d'aide | Support & FAQ</title>
-    <meta name="description"
-        content="Trouvez rapidement des réponses à vos questions sur NIMA. Compte, commandes, paiements, livraison, retours et support technique.">
+    <meta name="description" content="Trouvez rapidement des réponses à vos questions sur NIMA. Compte, commandes, paiements, livraison, retours et support technique.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@300;400;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href="nima.css" rel="stylesheet">
     <link href="aide.css" rel="stylesheet">
     <link rel="icon" type="image/png" href="nima_logo_png_orange.png">
@@ -26,7 +23,7 @@
     <!-- HEADER -->
     <header id="mainHeader">
         <a href="index.html" class="logo-link">
-            <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+            <img src="nima_logoFinal.png" alt="Nima" style="height: 50px; width: auto;">
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span>
@@ -56,73 +53,73 @@
         <!-- SIDEBAR -->
         <aside class="aide-sidebar">
 
-           <div class="sidebar-section">
-    <div class="sidebar-category open" onclick="toggleCategory(this)">
-        <i class="fa-solid fa-lock"></i> Compte & Sécurité
-        <span class="arrow">▶</span>
-    </div>
-    <div class="sidebar-items open">
-        <a class="sidebar-item active" onclick="showSection('se-connecter', this)">Se connecter à mon compte</a>
-        <a class="sidebar-item" onclick="showSection('creer-compte', this)">Créer un compte</a>
-        <a class="sidebar-item" onclick="showSection('mot-de-passe', this)">Mot de passe oublié</a>
-    </div>
-</div>
+            <div class="sidebar-section">
+                <div class="sidebar-category open" onclick="toggleCategory(this)">
+                    <i class="fa-solid fa-lock"></i> Compte & Sécurité
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="sidebar-items open">
+                    <a class="sidebar-item active" onclick="showSection('se-connecter', this)">Se connecter à mon compte</a>
+                    <a class="sidebar-item" onclick="showSection('creer-compte', this)">Créer un compte</a>
+                    <a class="sidebar-item" onclick="showSection('mot-de-passe', this)">Mot de passe oublié</a>
+                </div>
+            </div>
 
-<div class="sidebar-section">
-    <div class="sidebar-category" onclick="toggleCategory(this)">
-        <i class="fa-solid fa-cart-shopping"></i> Commandes & Paiements
-        <span class="arrow">▶</span>
-    </div>
-    <div class="sidebar-items">
-        <a class="sidebar-item" onclick="showSection('passer-commande', this)">Comment passer une commande ?</a>
-        <a class="sidebar-item" onclick="showSection('annuler-commande', this)">Puis-je annuler une commande ?</a>
-        <a class="sidebar-item" onclick="showSection('paiement-refuse', this)">Pourquoi mon paiement est refusé ?</a>
-    </div>
-</div>
+            <div class="sidebar-section">
+                <div class="sidebar-category" onclick="toggleCategory(this)">
+                    <i class="fa-solid fa-cart-shopping"></i> Commandes & Paiements
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="sidebar-items">
+                    <a class="sidebar-item" onclick="showSection('passer-commande', this)">Comment passer une commande ?</a>
+                    <a class="sidebar-item" onclick="showSection('annuler-commande', this)">Puis-je annuler une commande ?</a>
+                    <a class="sidebar-item" onclick="showSection('paiement-refuse', this)">Pourquoi mon paiement est refusé ?</a>
+                </div>
+            </div>
 
-<div class="sidebar-section">
-    <div class="sidebar-category" onclick="toggleCategory(this)">
-        <i class="fa-solid fa-truck"></i> Livraison & Retours
-        <span class="arrow">▶</span>
-    </div>
-    <div class="sidebar-items">
-        <a class="sidebar-item" onclick="showSection('delai-livraison', this)">Délai de livraison</a>
-        <a class="sidebar-item" onclick="showSection('frais-livraison', this)">Frais de livraison</a>
-        <a class="sidebar-item" onclick="showSection('retour-produit', this)">Échange ou retour de produit</a>
-    </div>
-</div>
+            <div class="sidebar-section">
+                <div class="sidebar-category" onclick="toggleCategory(this)">
+                    <i class="fa-solid fa-truck"></i> Livraison & Retours
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="sidebar-items">
+                    <a class="sidebar-item" onclick="showSection('delai-livraison', this)">Délai de livraison</a>
+                    <a class="sidebar-item" onclick="showSection('frais-livraison', this)">Frais de livraison</a>
+                    <a class="sidebar-item" onclick="showSection('retour-produit', this)">Échange ou retour de produit</a>
+                </div>
+            </div>
 
-<div class="sidebar-section">
-    <div class="sidebar-category" onclick="toggleCategory(this)">
-        <i class="fa-solid fa-store"></i> Vendre sur la Plateforme
-        <span class="arrow">▶</span>
-    </div>
-    <div class="sidebar-items">
-        <a class="sidebar-item" onclick="showSection('devenir-vendeur', this)">Devenir vendeur</a>
-    </div>
-</div>
+            <div class="sidebar-section">
+                <div class="sidebar-category" onclick="toggleCategory(this)">
+                    <i class="fa-solid fa-store"></i> Vendre sur la Plateforme
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="sidebar-items">
+                    <a class="sidebar-item" onclick="showSection('devenir-vendeur', this)">Devenir vendeur</a>
+                </div>
+            </div>
 
-<div class="sidebar-section">
-    <div class="sidebar-category" onclick="toggleCategory(this)">
-        <i class="fa-solid fa-screwdriver-wrench"></i> Problèmes Techniques
-        <span class="arrow">▶</span>
-    </div>
-    <div class="sidebar-items">
-        <a class="sidebar-item" onclick="showSection('app-bloque', this)">L'application se bloque</a>
-    </div>
-</div>
+            <div class="sidebar-section">
+                <div class="sidebar-category" onclick="toggleCategory(this)">
+                    <i class="fa-solid fa-screwdriver-wrench"></i> Problèmes Techniques
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="sidebar-items">
+                    <a class="sidebar-item" onclick="showSection('app-bloque', this)">L'application se bloque</a>
+                </div>
+            </div>
 
-<div class="sidebar-section">
-    <div class="sidebar-category" onclick="toggleCategory(this)">
-        <i class="fa-solid fa-file-contract"></i> Politiques & Conditions
-        <span class="arrow">▶</span>
-    </div>
-    <div class="sidebar-items">
-        <a class="sidebar-item" onclick="showSection('confidentialite', this)">Politique de confidentialité</a>
-        <a class="sidebar-item" onclick="showSection('politique-retour', this)">Politique de retour</a>
-        <a class="sidebar-item" onclick="showSection('conditions', this)">Conditions d'utilisation</a>
-    </div>
-</div>
+            <div class="sidebar-section">
+                <div class="sidebar-category" onclick="toggleCategory(this)">
+                    <i class="fa-solid fa-file-contract"></i> Politiques & Conditions
+                    <span class="arrow">▶</span>
+                </div>
+                <div class="sidebar-items">
+                    <a class="sidebar-item" onclick="showSection('confidentialite', this)">Politique de confidentialité</a>
+                    <a class="sidebar-item" onclick="showSection('politique-retour', this)">Politique de retour</a>
+                    <a class="sidebar-item" onclick="showSection('conditions', this)">Conditions d'utilisation</a>
+                </div>
+            </div>
 
             <div class="sidebar-section">
                 <div class="sidebar-category" style="color: var(--primary);" onclick="scrollToContact()">
@@ -140,23 +137,16 @@
                 <p class="content-breadcrumb">Aide › <span>Compte & Sécurité</span> › Se connecter</p>
                 <h2>Se connecter à mon <span>compte</span></h2>
                 <div class="content-divider"></div>
-                <p class="content-text">Pour accéder à votre compte NIMA, suivez ces étapes simples depuis l'application
-                    :</p>
+                <p class="content-text">Pour accéder à votre compte NIMA, suivez ces étapes simples depuis l'application :</p>
                 <ul class="content-steps">
-                    <li><span class="step-num">1</span><span>Ouvrez l'application <strong>NIMA</strong> sur votre
-                            téléphone.</span></li>
-                    <li><span class="step-num">2</span><span>Sur l'écran d'accueil, appuyez sur le bouton <strong>« Se
-                                connecter »</strong>.</span></li>
-                    <li><span class="step-num">3</span><span>Entrez votre <strong>adresse e-mail</strong> ou votre
-                            <strong>numéro de téléphone</strong> enregistré.</span></li>
-                    <li><span class="step-num">4</span><span>Saisissez votre <strong>mot de passe</strong> puis appuyez
-                            sur <strong>« Connexion »</strong>.</span></li>
-                    <li><span class="step-num">5</span><span>Vous êtes maintenant connecté à votre compte NIMA !</span>
-                    </li>
+                    <li><span class="step-num">1</span><span>Ouvrez l'application <strong>NIMA</strong> sur votre téléphone.</span></li>
+                    <li><span class="step-num">2</span><span>Sur l'écran d'accueil, appuyez sur le bouton <strong>« Se connecter »</strong>.</span></li>
+                    <li><span class="step-num">3</span><span>Entrez votre <strong>adresse e-mail</strong> ou votre <strong>numéro de téléphone</strong> enregistré.</span></li>
+                    <li><span class="step-num">4</span><span>Saisissez votre <strong>mot de passe</strong> puis appuyez sur <strong>« Connexion »</strong>.</span></li>
+                    <li><span class="step-num">5</span><span>Vous êtes maintenant connecté à votre compte NIMA !</span></li>
                 </ul>
                 <div class="info-box">
-                    <strong>💡 Astuce :</strong> Activez la connexion automatique pour ne plus avoir à saisir votre mot
-                    de passe à chaque ouverture de l'application.
+                    <strong>💡 Astuce :</strong> Activez la connexion automatique pour ne plus avoir à saisir votre mot de passe à chaque ouverture de l'application.
                 </div>
                 <div class="video-placeholder">
                     <p>📹 Tutoriel vidéo — Se connecter à son compte NIMA</p>
@@ -169,22 +159,14 @@
                 <p class="content-breadcrumb">Aide › <span>Compte & Sécurité</span> › Créer un compte</p>
                 <h2>Créer un <span>compte</span></h2>
                 <div class="content-divider"></div>
-                <p class="content-text">Rejoignez la communauté NIMA en quelques minutes. Voici comment créer votre
-                    compte :</p>
+                <p class="content-text">Rejoignez la communauté NIMA en quelques minutes. Voici comment créer votre compte :</p>
                 <ul class="content-steps">
-                    <li><span class="step-num">1</span><span>Téléchargez l'application <strong>NIMA</strong> depuis
-                            play store ou app store.</span></li>
-                    <li><span class="step-num">2</span><span>Ouvrez l'application et appuyez sur <strong>« Créer un
-                                compte »</strong>.</span></li>
-                    <li><span class="step-num">3</span><span>Renseignez votre <strong>nom</strong>,
-                            <strong>prénom</strong>, <strong>adresse e-mail</strong> et <strong>numéro de
-                                téléphone</strong>.</span></li>
-                    <li><span class="step-num">4</span><span>Choisissez un <strong>mot de passe sécurisé</strong>
-                            (minimum 8 caractères).</span></li>
-                    <li><span class="step-num">5</span><span>Acceptez les <strong>conditions d'utilisation</strong> et
-                            appuyez sur <strong>« S'inscrire »</strong>.</span></li>
-                    <li><span class="step-num">6</span><span>Un <strong>code de vérification</strong> vous sera envoyé
-                            par SMS ou e-mail. Saisissez-le pour valider votre compte.</span></li>
+                    <li><span class="step-num">1</span><span>Téléchargez l'application <strong>NIMA</strong> depuis play store ou app store.</span></li>
+                    <li><span class="step-num">2</span><span>Ouvrez l'application et appuyez sur <strong>« Créer un compte »</strong>.</span></li>
+                    <li><span class="step-num">3</span><span>Renseignez votre <strong>nom</strong>, <strong>prénom</strong>, <strong>adresse e-mail</strong> et <strong>numéro de téléphone</strong>.</span></li>
+                    <li><span class="step-num">4</span><span>Choisissez un <strong>mot de passe sécurisé</strong> (minimum 8 caractères).</span></li>
+                    <li><span class="step-num">5</span><span>Acceptez les <strong>conditions d'utilisation</strong> et appuyez sur <strong>« S'inscrire »</strong>.</span></li>
+                    <li><span class="step-num">6</span><span>Un <strong>code de vérification</strong> vous sera envoyé par SMS ou e-mail. Saisissez-le pour valider votre compte.</span></li>
                 </ul>
                 <div class="video-placeholder">
                     <p>📹 Tutoriel vidéo — Créer son compte NIMA</p>
@@ -199,18 +181,13 @@
                 <div class="content-divider"></div>
                 <p class="content-text">Pas de panique ! Réinitialisez votre mot de passe en quelques étapes :</p>
                 <ul class="content-steps">
-                    <li><span class="step-num">1</span><span>Sur l'écran de connexion, appuyez sur <strong>« Mot de
-                                passe oublié ? »</strong>.</span></li>
-                    <li><span class="step-num">2</span><span>Entrez l'<strong>adresse e-mail</strong> ou le
-                            <strong>numéro de téléphone</strong> lié à votre compte.</span></li>
-                    <li><span class="step-num">3</span><span>Vous recevrez un <strong>code de réinitialisation</strong>
-                            par SMS ou e-mail.</span></li>
+                    <li><span class="step-num">1</span><span>Sur l'écran de connexion, appuyez sur <strong>« Mot de passe oublié ? »</strong>.</span></li>
+                    <li><span class="step-num">2</span><span>Entrez l'<strong>adresse e-mail</strong> ou le <strong>numéro de téléphone</strong> lié à votre compte.</span></li>
+                    <li><span class="step-num">3</span><span>Vous recevrez un <strong>code de réinitialisation</strong> par SMS ou e-mail.</span></li>
                     <li><span class="step-num">4</span><span>Saisissez le code reçu dans l'application.</span></li>
-                    <li><span class="step-num">5</span><span>Créez un <strong>nouveau mot de passe</strong> sécurisé et
-                            confirmez-le.</span></li>
+                    <li><span class="step-num">5</span><span>Créez un <strong>nouveau mot de passe</strong> sécurisé et confirmez-le.</span></li>
                 </ul>
-                <div class="warning-box">⚠️ Si vous ne recevez pas le code, vérifiez vos spams ou attendez quelques
-                    minutes avant de réessayer.</div>
+                <div class="warning-box">⚠️ Si vous ne recevez pas le code, vérifiez vos spams ou attendez quelques minutes avant de réessayer.</div>
                 <div class="video-placeholder">
                     <p>📹 Tutoriel vidéo — Réinitialiser son mot de passe</p>
                     <p style="font-size:11px; margin-top:6px;">Vidéo YouTube à intégrer ici</p>
@@ -224,28 +201,18 @@
                 <div class="content-divider"></div>
                 <p class="content-text">Commander sur NIMA est simple et rapide. Suivez ces étapes :</p>
                 <ul class="content-steps">
-                    <li><span class="step-num">1</span><span>Parcourez les produits disponibles et appuyez sur le
-                            produit qui vous intéresse.</span></li>
-                    <li><span class="step-num">2</span><span>Choisissez la quantité souhaitée, puis appuyez sur
-                            <strong>« Ajouter au panier »</strong>.</span></li>
-                    <li><span class="step-num">3</span><span>Une fois vos achats terminés, allez dans votre
-                            <strong>Panier</strong> et vérifiez votre sélection.</span></li>
-                    <li><span class="step-num">4</span><span>Appuyez sur <strong>« Commander »</strong> et choisissez ou
-                            confirmez votre <strong>adresse de livraison</strong>.</span></li>
-                    <li><span class="step-num">5</span><span>Sélectionnez votre <strong>mode de paiement</strong>
-                            (Mobile Money, Carte, etc.).</span></li>
-                    <li><span class="step-num">6</span><span>Vérifiez le récapitulatif et appuyez sur <strong>«
-                                Confirmer la commande »</strong>.</span></li>
-                    <li><span class="step-num">7</span><span>Vous recevrez un <strong>e-mail de confirmation</strong>.
-                            Suivez l'évolution depuis <strong>Profil → Mes Commandes</strong>.</span></li>
+                    <li><span class="step-num">1</span><span>Ajoutez des articles à votre panier.</span></li>
+                    <li><span class="step-num">2</span><span>Choisissez une <strong>adresse de livraison</strong> — par défaut, votre localisation actuelle est demandée.</span></li>
+                    <li><span class="step-num">3</span><span>Sélectionnez un <strong>mode de paiement</strong> (Mobile Money, Carte, etc.) — par défaut le paiement à la livraison est choisi.</span></li>
+                    <li><span class="step-num">4</span><span>Confirmez la commande.</span></li>
+                    <li><span class="step-num">5</span><span>Vous recevrez un <strong>e-mail de confirmation</strong> dans la seconde. Suivez les étapes d'évolution de votre commande.</span></li>
                 </ul>
                 <div class="info-box">
-                    <strong>📦 Réception :</strong> Lorsque le livreur arrive, présentez-lui le <strong>code QR</strong>
-                    accessible depuis :<br><br>
+                    <strong>📦 Réception :</strong> Lorsque le livreur arrive, vous devez lui fournir le <strong>code QR</strong> de la commande à scanner depuis :<br><br>
                     <strong>Profil → Mes Commandes → La commande → Code QR</strong>
                 </div>
                 <div class="video-placeholder">
-                    <p>📹 Tutoriel vidéo — Passer une commande sur NIMA</p>
+                    <p>📹 Tutoriel explicatif — Passer une commande sur NIMA</p>
                     <p style="font-size:11px; margin-top:6px;">Vidéo YouTube à intégrer ici</p>
                 </div>
             </div>
@@ -253,25 +220,18 @@
             <!-- ANNULER UNE COMMANDE -->
             <div id="annuler-commande" class="content-section">
                 <p class="content-breadcrumb">Aide › <span>Commandes & Paiements</span> › Annuler une commande</p>
-                <h2>Annuler une <span>commande</span></h2>
+                <h2>Puis-je annuler une <span>commande</span> ?</h2>
                 <div class="content-divider"></div>
-                <p class="content-text">Vous pouvez annuler une commande dans les <strong>24 heures</strong> suivant sa
-                    confirmation :</p>
+                <div class="info-box"><strong>✅ Oui, avant 24h</strong> suivant la confirmation de votre commande.</div>
+                <p class="content-text">Voici comment procéder :</p>
                 <ul class="content-steps">
-                    <li><span class="step-num">1</span><span>Ouvrez l'application NIMA et allez dans
-                            <strong>Profil</strong>.</span></li>
-                    <li><span class="step-num">2</span><span>Appuyez sur <strong>« Mes Commandes »</strong>.</span></li>
-                    <li><span class="step-num">3</span><span>Sélectionnez la commande que vous souhaitez annuler.</span>
-                    </li>
-                    <li><span class="step-num">4</span><span>Appuyez sur les <strong>trois points (⋮)</strong> en haut à
-                            droite de la commande.</span></li>
-                    <li><span class="step-num">5</span><span>Choisissez <strong>« Annuler la commande »</strong> et
-                            confirmez.</span></li>
+                    <li><span class="step-num">1</span><span>Allez dans <strong>Mes Commandes</strong>.</span></li>
+                    <li><span class="step-num">2</span><span>Cliquez sur la commande concernée.</span></li>
+                    <li><span class="step-num">3</span><span>Appuyez sur <strong>« Annuler la commande »</strong>.</span></li>
                 </ul>
-                <div class="warning-box">⚠️ <strong>Passé le délai de 24h</strong>, contactez notre service client
-                    directement.</div>
+                <div class="warning-box">⚠️ Passé ce délai de 24h, contactez le service client via les informations de contact ci-dessous.</div>
                 <div class="video-placeholder">
-                    <p>📹 Tutoriel vidéo — Annuler une commande sur NIMA</p>
+                    <p>📹 Tutoriel explicatif — Annuler une commande sur NIMA</p>
                     <p style="font-size:11px; margin-top:6px;">Vidéo YouTube à intégrer ici</p>
                 </div>
             </div>
@@ -281,19 +241,13 @@
                 <p class="content-breadcrumb">Aide › <span>Commandes & Paiements</span> › Paiement refusé</p>
                 <h2>Pourquoi mon paiement est <span>refusé</span> ?</h2>
                 <div class="content-divider"></div>
-                <p class="content-text">Plusieurs raisons peuvent expliquer un paiement refusé :</p>
+                <p class="content-text">Voici les raisons les plus fréquentes :</p>
                 <ul class="content-steps">
-                    <li><span class="step-num">!</span><span><strong>Solde insuffisant</strong> — Vérifiez que votre
-                            compte Mobile Money ou votre carte dispose de fonds suffisants.</span></li>
-                    <li><span class="step-num">!</span><span><strong>Numéro de téléphone incorrect</strong> — Pour
-                            Mobile Money, assurez-vous que le numéro correspond exactement à votre compte.</span></li>
-                    <li><span class="step-num">!</span><span><strong>Connexion internet instable</strong> — Passez en
-                            Wi-Fi ou déplacez-vous dans une zone avec meilleur réseau.</span></li>
+                    <li><span class="step-num">✗</span><span><strong>Solde insuffisant</strong> — Vérifiez votre solde Mobile Money ou votre carte.</span></li>
+                    <li><span class="step-num">✗</span><span><strong>Numéro de téléphone incorrect</strong> — Vérifiez le numéro saisi pour Mobile Money.</span></li>
+                    <li><span class="step-num">✗</span><span><strong>Connexion internet instable</strong> — Vérifiez votre connexion et réessayez.</span></li>
                 </ul>
-                <div class="info-box">
-                    <strong>💡 Si le problème persiste</strong>, contactez notre service client. Nous vous aiderons
-                    rapidement.
-                </div>
+                <div class="info-box">💡 Si le problème persiste, contactez notre support via les informations de contact ci-dessous.</div>
             </div>
 
             <!-- DÉLAI LIVRAISON -->
@@ -303,8 +257,7 @@
                 <div class="content-divider"></div>
                 <p class="content-text">Les délais varient selon le vendeur et votre distance par rapport à lui.</p>
                 <div class="info-box">
-                    <strong>⏱ Délai standard :</strong> Généralement <strong>1 à 2 jours ouvrables</strong> après
-                    confirmation de la commande.
+                    <strong>⏱ Délai standard :</strong> Généralement <strong>1 à 2 jours ouvrables</strong> après confirmation de la commande.
                 </div>
                 <p class="content-text">Suivez votre livraison en temps réel depuis :</p>
                 <div class="path-box">📍 Profil → Mes Commandes → La commande → Suivi</div>
@@ -317,49 +270,44 @@
                 <div class="content-divider"></div>
                 <p class="content-text">Les frais sont calculés automatiquement selon votre adresse et le vendeur.</p>
                 <div class="info-box">
-                    <strong>💰 Où voir les frais ?</strong> Ils sont affichés dans le <strong>récapitulatif de
-                        commande</strong>, avant confirmation. Aucune surprise !
+                    <strong>💰 Où voir les frais ?</strong> Ils sont affichés dans le <strong>récapitulatif de commande</strong>, avant confirmation. Aucune surprise !
                 </div>
-                <div class="warning-box">⚠️ Les frais de livraison ne sont <strong>pas remboursables</strong> en cas de
-                    retour, sauf produit défectueux.</div>
+                <div class="warning-box">⚠️ Les frais de livraison ne sont <strong>pas remboursables</strong> en cas de retour, sauf produit défectueux.</div>
             </div>
 
             <!-- RETOUR PRODUIT -->
             <div id="retour-produit" class="content-section">
-                <p class="content-breadcrumb">Aide › <span>Livraison & Retours</span> › Retour de produit</p>
+                <p class="content-breadcrumb">Aide › <span>Livraison & Retours</span> › Échange ou retour</p>
                 <h2>Échange ou retour de <span>produit</span></h2>
                 <div class="content-divider"></div>
-                <p class="content-text">Vous disposez de <strong>48 heures</strong> après réception pour demander un
-                    retour :</p>
+                <p class="content-text">Vous disposez de <strong>48 heures</strong> après réception pour demander un retour :</p>
                 <ul class="content-steps">
-                    <li><span class="step-num">1</span><span>Prenez des <strong>photos et vidéos</strong> claires du
-                            produit concerné.</span></li>
-                    <li><span class="step-num">2</span><span>Dans l'application : <strong>Mes Commandes → Signaler un
-                                problème</strong> sous les 24h.</span></li>
-                    <li><span class="step-num">3</span><span>Envoyez un message WhatsApp avec le modèle
-                            ci-dessous.</span></li>
+                    <li><span class="step-num">1</span><span>Prenez des <strong>photos et vidéos</strong> claires du produit concerné.</span></li>
+                    <li><span class="step-num">2</span><span>Dans l'application : <strong>Mes Commandes → Signaler un problème</strong> sous les 24h.</span></li>
+                    <li><span class="step-num">3</span><span>Envoyez un message WhatsApp avec le modèle ci-dessous.</span></li>
                 </ul>
-                <div class="message-template">
-                    <button class="copy-btn" onclick="copyTemplate()">Copier</button>
-                    <strong>Objet : Demande de retour produit - Nima</strong><br><br>
-                    <strong>INFORMATIONS DE CONTACT</strong><br>
-                    Nom : [Votre Nom]<br>
-                    Prénom : [Votre Prénom]<br>
-                    Email : [Votre Email]<br>
-                    N° de téléphone : [Votre Numéro]<br><br>
-                    <strong>DÉTAILS DE LA COMMANDE</strong><br>
-                    ID Commande : # [Numéro de commande]<br><br>
-                    <strong>PIÈCES JOINTES REQUISES</strong><br>
-                    📸 Captures d'écran du produit<br>
-                    🎥 Vidéo du produit<br><br>
-                    <strong>MESSAGE DE LA DEMANDE</strong><br>
-                    [Expliquez ici la raison de votre retour]<br><br>
-                    <em>J'accepte et confirme avoir lu la politique de retour de Nima.</em>
+                <div class="whatsapp-template" style="background: var(--bg-card); border: 1px solid var(--border); border-radius: 12px; padding: 24px; margin: 20px 0; position: relative;">
+                    <button onclick="copyTemplate()" class="copy-btn" style="position: absolute; top: 16px; right: 16px; background: var(--primary); color: white; border: none; padding: 8px 18px; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 13px;">Copier</button>
+                    <p style="font-weight: 700; margin-bottom: 16px; font-size: 15px;">Objet : Demande de retour produit - Nima</p>
+                    <p style="font-weight: 700; margin: 12px 0 6px; color: var(--primary);">INFORMATIONS DE CONTACT</p>
+                    <p style="margin: 4px 0;">Nom : [Votre Nom]</p>
+                    <p style="margin: 4px 0;">Prénom : [Votre Prénom]</p>
+                    <p style="margin: 4px 0;">Email : [Votre Email]</p>
+                    <p style="margin: 4px 0;">N° de téléphone : [Votre Numéro]</p>
+                    <p style="font-weight: 700; margin: 16px 0 6px; color: var(--primary);">DÉTAILS DE LA COMMANDE</p>
+                    <p style="margin: 4px 0;">ID Commande : # [Numéro de commande]</p>
+                    <p style="font-weight: 700; margin: 16px 0 6px; color: var(--primary);">PIÈCES JOINTES REQUISES</p>
+                    <p style="margin: 4px 0;">📸 <em>Captures d'écran du produit jointes</em></p>
+                    <p style="margin: 4px 0;">🎥 <em>Vidéo du produit jointe</em></p>
+                    <p style="font-weight: 700; margin: 16px 0 6px; color: var(--primary);">MESSAGE DE LA DEMANDE</p>
+                    <p style="margin: 4px 0;">[Expliquez ici brièvement la raison de votre retour]</p>
+                    <p style="margin: 16px 0 0; font-style: italic; font-size: 13px; color: var(--text-secondary); border-top: 1px solid var(--border); padding-top: 12px;">
+                        J'accepte et confirme avoir lu et pris connaissance de la politique de retour de Nima. Je confirme que toutes les informations mentionnées ci-dessus sont correctes et conformes à la politique. J'ai conscience que ma demande peut être rejetée en cas d'information fausse ou manquante, ou en cas de fausse identité.
+                    </p>
                 </div>
-                <div class="warning-box">⚠️ Le message doit être complet avec toutes les photos, vidéos et informations
-                    pour éviter le rejet.</div>
+                <div class="warning-box">⚠️ <strong>Note :</strong> Le message doit être envoyé dans les moindres détails comprenant les photos, vidéos et informations demandées, pour éviter le risque de rejet de votre demande.</div>
                 <div class="video-placeholder">
-                    <p>📹 Tutoriel vidéo — Faire une demande de retour</p>
+                    <p>📹 Tutoriel explicatif — Échange ou retour de produit</p>
                     <p style="font-size:11px; margin-top:6px;">Vidéo YouTube à intégrer ici</p>
                 </div>
             </div>
@@ -369,8 +317,7 @@
                 <p class="content-breadcrumb">Aide › <span>Vendre sur la Plateforme</span> › Devenir vendeur</p>
                 <h2>Devenir <span>vendeur</span></h2>
                 <div class="content-divider"></div>
-                <p class="content-text">NIMA offre aux vendeurs une solution complète pour gérer et vendre leurs
-                    produits en ligne.</p>
+                <p class="content-text">NIMA offre aux vendeurs une solution complète pour gérer et vendre leurs produits en ligne.</p>
                 <div class="info-box">
                     <strong>🚀 Nima Business Suite</strong> — Plateforme web dédiée aux vendeurs :<br><br>
                     • Créer votre compte vendeur<br>
@@ -378,8 +325,7 @@
                     • Suivre vos statistiques de ventes<br>
                     • Gérer votre stock
                 </div>
-                <p class="content-text">Préparez votre stock et contactez-nous pour en savoir plus sur les conditions
-                    pour devenir vendeur NIMA.</p>
+                <p class="content-text">Préparez votre stock et contactez-nous pour en savoir plus sur les conditions pour devenir vendeur NIMA.</p>
             </div>
 
             <!-- APP BLOQUÉE -->
@@ -389,17 +335,12 @@
                 <div class="content-divider"></div>
                 <p class="content-text">Essayez ces solutions dans l'ordre :</p>
                 <ul class="content-steps">
-                    <li><span class="step-num">1</span><span><strong>Fermez et rouvrez l'application</strong> — Faites
-                            glisser l'app hors de l'écran multitâche puis relancez-la.</span></li>
-                    <li><span class="step-num">2</span><span><strong>Redémarrez votre téléphone</strong> — Un
-                            redémarrage simple résout souvent les problèmes temporaires.</span></li>
-                    <li><span class="step-num">3</span><span><strong>Vérifiez les mises à jour</strong> — Installez la
-                            dernière version de NIMA depuis l'App Store ou Google Play.</span></li>
-                    <li><span class="step-num">4</span><span><strong>Désinstallez et réinstallez</strong> — Vos données
-                            sont sauvegardées et ne seront pas perdues.</span></li>
+                    <li><span class="step-num">1</span><span><strong>Fermez et rouvrez l'application</strong> — Faites glisser l'app hors de l'écran multitâche puis relancez-la.</span></li>
+                    <li><span class="step-num">2</span><span><strong>Redémarrez votre téléphone</strong> — Un redémarrage simple résout souvent les problèmes temporaires.</span></li>
+                    <li><span class="step-num">3</span><span><strong>Vérifiez les mises à jour</strong> — Installez la dernière version de NIMA depuis l'App Store ou Google Play.</span></li>
+                    <li><span class="step-num">4</span><span><strong>Désinstallez et réinstallez</strong> — Vos données sont sauvegardées et ne seront pas perdues.</span></li>
                 </ul>
-                <div class="info-box"><strong>💡 Si le problème persiste</strong>, contactez notre support en décrivant
-                    le problème rencontré.</div>
+                <div class="info-box"><strong>💡 Si le problème persiste</strong>, contactez notre support en décrivant le problème rencontré.</div>
             </div>
 
             <!-- CONFIDENTIALITÉ -->
@@ -407,16 +348,32 @@
                 <p class="content-breadcrumb">Aide › <span>Politiques & Conditions</span> › Confidentialité</p>
                 <h2>Politique de <span>confidentialité</span></h2>
                 <div class="content-divider"></div>
-                <p class="content-text"><strong>Informations collectées :</strong> Nom, adresse e-mail, numéro de
-                    téléphone, adresse de livraison.</p>
-                <p class="content-text"><strong>Utilisation :</strong> Traitement des commandes, gestion des paiements,
-                    amélioration du service et communication avec vous.</p>
-                <p class="content-text"><strong>Protection :</strong> Mesures de sécurité appropriées mises en œuvre
-                    pour protéger vos données.</p>
-                <p class="content-text"><strong>Partage :</strong> Aucune vente ni transfert de vos données sans
-                    consentement, sauf pour les partenaires de livraison ou obligations légales.</p>
-                <div class="info-box"><strong>Vos droits :</strong> Accès, correction ou suppression de vos informations
-                    à tout moment.</div>
+                <p class="content-text"><strong>Informations collectées :</strong> Nom, adresse e-mail, numéro de téléphone, adresse de livraison.</p>
+                <p class="content-text"><strong>Utilisation des informations</strong></p>
+                <p class="content-text">Nous utilisons les informations collectées pour :</p>
+                <ul class="content-steps">
+                    <li><span class="step-num">✓</span><span>Traiter les commandes et gérer les paiements.</span></li>
+                    <li><span class="step-num">✓</span><span>Améliorer notre service et personnaliser l'expérience utilisateur.</span></li>
+                    <li><span class="step-num">✓</span><span>Communiquer avec les utilisateurs concernant leur compte et les mises à jour.</span></li>
+                </ul>
+                <p class="content-text"><strong>Protection des informations</strong></p>
+                <p class="content-text">Nous mettons en œuvre des mesures de sécurité appropriées pour protéger vos informations personnelles. Cependant, aucune méthode de transmission sur Internet ou de stockage électronique n'est totalement sécurisée.</p>
+                <p class="content-text"><strong>Partage des informations</strong></p>
+                <p class="content-text">Nous ne vendons, n'échangeons ni ne transférons vos informations personnelles à des tiers sans votre consentement, sauf si cela est nécessaire pour :</p>
+                <ul class="content-steps">
+                    <li><span class="step-num">✓</span><span>Fournir nos services (par exemple, partenaires de livraison).</span></li>
+                    <li><span class="step-num">✓</span><span>Respecter la loi ou se conformer à une procédure judiciaire.</span></li>
+                </ul>
+                <div class="info-box">
+                    <strong>Vos droits :</strong> Vous avez le droit de :
+                    <ul style="margin-top: 10px; padding-left: 16px;">
+                        <li>Accéder à vos informations personnelles.</li>
+                        <li>Demander la correction de vos informations.</li>
+                        <li>Demander la suppression de vos informations.</li>
+                    </ul>
+                </div>
+                <p class="content-text"><strong>Modifications de la politique</strong></p>
+                <p class="content-text">Nous nous réservons le droit de modifier cette Politique de Confidentialité à tout moment. Nous vous informerons des changements en publiant la politique mise à jour sur notre Application.</p>
             </div>
 
             <!-- POLITIQUE RETOUR -->
@@ -424,17 +381,48 @@
                 <p class="content-breadcrumb">Aide › <span>Politiques & Conditions</span> › Politique de retour</p>
                 <h2>Politique de <span>retour</span></h2>
                 <div class="content-divider"></div>
-                <div class="info-box"><strong>⏱ Délai :</strong> 48 heures calendaires après réception du produit.</div>
-                <p class="content-text"><strong>Produits éligibles :</strong></p>
+                <p class="content-text">Chez NIMA, la satisfaction de nos clients est une priorité. Cette politique définit les conditions et procédures applicables au retour des produits achetés via la plateforme.</p>
+                <div class="info-box"><strong>⏱ Délai de retour :</strong> 48 heures calendaires à compter de la date de réception du produit.</div>
+                <p class="content-text"><strong>Produits éligibles au retour</strong></p>
+                <p class="content-text">Un produit peut être retourné si :</p>
                 <ul class="content-steps">
-                    <li><span class="step-num">✓</span><span>Produit défectueux ou endommagé</span></li>
-                    <li><span class="step-num">✓</span><span>Produit non utilisé, dans son état d'origine avec
-                            emballage</span></li>
+                    <li><span class="step-num">✓</span><span>Il est défectueux ou endommagé.</span></li>
+                    <li><span class="step-num">✓</span><span>Il est retourné dans son état d'origine.</span></li>
+                    <li><span class="step-num">✓</span><span>Il n'a pas été utilisé.</span></li>
+                    <li><span class="step-num">✓</span><span>Il est accompagné de son emballage d'origine.</span></li>
                 </ul>
-                <p class="content-text"><strong>Non éligibles :</strong> Produits personnalisés, périssables, d'hygiène
-                    déjà ouverts.</p>
-                <div class="warning-box">⚠️ Frais de retour à la charge du client, sauf produit défectueux ou erroné.
+                <p class="content-text"><strong>Produits non éligibles</strong></p>
+                <p class="content-text">Les produits suivants ne peuvent pas être retournés, sauf défaut avéré :</p>
+                <ul class="content-steps">
+                    <li><span class="step-num">✗</span><span>Produits personnalisés.</span></li>
+                    <li><span class="step-num">✗</span><span>Produits périssables.</span></li>
+                    <li><span class="step-num">✗</span><span>Produits d'hygiène ou à usage personnel déjà ouverts.</span></li>
+                    <li><span class="step-num">✗</span><span>Produits clairement mentionnés comme non retournables sur la fiche produit.</span></li>
+                </ul>
+                <p class="content-text"><strong>Procédure de retour</strong></p>
+                <ul class="content-steps">
+                    <li><span class="step-num">1</span><span>Envoyez une demande via l'application NIMA : <strong>Mes commandes → Signaler un problème</strong>.</span></li>
+                    <li><span class="step-num">2</span><span>Nous examinerons votre demande.</span></li>
+                    <li><span class="step-num">3</span><span>En cas d'acceptation : le produit est retourné selon les instructions fournies.</span></li>
+                    <li><span class="step-num">4</span><span>Un <strong>remboursement ou un remplacement</strong> est effectué.</span></li>
+                </ul>
+                <p class="content-text"><strong>Remboursement</strong></p>
+                <ul class="content-steps">
+                    <li><span class="step-num">✓</span><span>Effectué via le moyen de paiement initial, lorsque possible.</span></li>
+                    <li><span class="step-num">✗</span><span>Les frais de livraison ne sont pas remboursables.</span></li>
+                    <li><span class="step-num">ℹ</span><span>Les délais peuvent varier selon le vendeur.</span></li>
+                </ul>
+                <p class="content-text"><strong>Frais de retour</strong></p>
+                <ul class="content-steps">
+                    <li><span class="step-num">✓</span><span>Les frais de retour sont à la charge du client, sauf si le produit est défectueux ou erroné.</span></li>
+                    <li><span class="step-num">✓</span><span>Dans ce cas, les frais peuvent être pris en charge par NIMA.</span></li>
+                </ul>
+                <div class="warning-box">⚠️ <strong>Responsabilité :</strong> NIMA agit en tant qu'intermédiaire entre le client et le vendeur.</div>
+                <div class="info-box">
+                    <strong>📧 Assistance :</strong> Pour toute question ou litige, contactez le support NIMA :<br>
+                    <a href="mailto:nima.niger.25@gmail.com" style="color: var(--primary);">nima.niger.25@gmail.com</a>
                 </div>
+                <p class="content-text"><strong>Mise à jour :</strong> Cette politique peut être modifiée à tout moment. Les conditions applicables sont celles en vigueur au moment de la commande.</p>
             </div>
 
             <!-- CONDITIONS D'UTILISATION -->
@@ -442,17 +430,25 @@
                 <p class="content-breadcrumb">Aide › <span>Politiques & Conditions</span> › Conditions d'utilisation</p>
                 <h2>Conditions d'<span>utilisation</span></h2>
                 <div class="content-divider"></div>
-                <p class="content-text"><strong>Inscription :</strong> Créez un compte avec des informations exactes et
-                    complètes.</p>
-                <p class="content-text"><strong>Comportement :</strong> Utilisation conforme à la loi, sans interférer
-                    avec le fonctionnement de l'application.</p>
-                <p class="content-text"><strong>Propriété intellectuelle :</strong> Tous les contenus et marques sont la
-                    propriété de NIMA. Reproduction interdite sans autorisation.</p>
-                <p class="content-text"><strong>Limitation de responsabilité :</strong> NIMA ne pourra être tenu
-                    responsable des dommages résultant de l'utilisation de l'application.</p>
+                <p class="content-text"><strong>Inscription</strong></p>
+                <p class="content-text">Pour utiliser certaines fonctionnalités, vous devez créer un compte en fournissant des informations exactes et complètes.</p>
+                <p class="content-text"><strong>Comportement des utilisateurs</strong></p>
+                <ul class="content-steps">
+                    <li><span class="step-num">✓</span><span>Vous vous engagez à ne pas utiliser l'application à des fins illégales ou interdites.</span></li>
+                    <li><span class="step-num">✓</span><span>Vous ne devez pas interférer avec le fonctionnement de l'application ou tenter d'accéder à des systèmes ou réseaux non autorisés.</span></li>
+                </ul>
+                <p class="content-text"><strong>Propriété intellectuelle</strong></p>
+                <ul class="content-steps">
+                    <li><span class="step-num">✓</span><span>Tous les contenus, marques et droits d'auteur présents dans l'application sont la propriété de NIMA ou de ses partenaires.</span></li>
+                    <li><span class="step-num">✓</span><span>Vous vous engagez à ne pas reproduire, distribuer ou modifier ces contenus sans autorisation.</span></li>
+                </ul>
+                <div class="warning-box">⚠️ <strong>Limitation de responsabilité :</strong> NIMA ne pourra être tenu responsable des dommages directs ou indirects résultant de l'utilisation ou de l'impossibilité d'utiliser l'application.</div>
+                <p class="content-text"><strong>Modifications des conditions</strong></p>
+                <p class="content-text">Nous nous réservons le droit de modifier ces Conditions d'Utilisation à tout moment. Les modifications entreront en vigueur dès leur publication sur l'application.</p>
             </div>
 
         </main>
+
     </div>
 
     <!-- SECTION CONTACT -->
@@ -464,32 +460,24 @@
                 <div class="contact-infos">
                     <div class="contact-info-item">
                         <div class="icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                                </path>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
                             </svg>
                         </div>
                         <span>+227 97 93 87 80 (Appel)</span>
                     </div>
                     <div class="contact-info-item">
                         <div class="icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path
-                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
-                                </path>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                             </svg>
                         </div>
                         <span>+212 607 301 053 (WhatsApp)</span>
                     </div>
                     <div class="contact-info-item">
                         <div class="icon">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                         </div>
@@ -497,10 +485,8 @@
                     </div>
                 </div>
                 <div class="horaires" style="margin-top: 24px;">
-                    <strong
-                        style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--text-primary);">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <strong style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px; color: var(--text-primary);">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg> Heures d'ouverture
@@ -510,21 +496,21 @@
                 </div>
             </div>
             <form class="contact-aide-form" action="https://formspree.io/f/xnjgnvly" method="POST">
-    <input type="text" name="nom" placeholder="Votre nom complet" id="contact-name">
-    <input type="email" name="email" placeholder="Votre adresse e-mail" id="contact-email">
-    <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" id="contact-phone">
-    <select name="sujet" id="contact-subject">
-        <option value="">Sélectionnez un sujet</option>
-        <option>Compte & Sécurité</option>
-        <option>Commandes & Paiements</option>
-        <option>Livraison & Retours</option>
-        <option>Problèmes Techniques</option>
-        <option>Vendre sur la Plateforme</option>
-        <option>Autre</option>
-    </select>
-    <textarea name="message" placeholder="Décrivez votre problème ou votre question..." id="contact-message"></textarea>
-    <button type="submit" id="contact-submit">Envoyer le message</button>
-</form>
+                <input type="text" name="nom" placeholder="Votre nom complet" id="contact-name">
+                <input type="email" name="email" placeholder="Votre adresse e-mail" id="contact-email">
+                <input type="tel" name="telephone" placeholder="Votre numéro de téléphone" id="contact-phone">
+                <select name="sujet" id="contact-subject">
+                    <option value="">Sélectionnez un sujet</option>
+                    <option>Compte & Sécurité</option>
+                    <option>Commandes & Paiements</option>
+                    <option>Livraison & Retours</option>
+                    <option>Problèmes Techniques</option>
+                    <option>Vendre sur la Plateforme</option>
+                    <option>Autre</option>
+                </select>
+                <textarea name="message" placeholder="Décrivez votre problème ou votre question..." id="contact-message"></textarea>
+                <button type="submit" id="contact-submit">Envoyer le message</button>
+            </form>
         </div>
     </section>
 
@@ -532,32 +518,25 @@
     <footer class="footer-pro">
         <div class="footer-content">
             <div class="footer-sec brandinfo">
-                <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
-                <p>NIMA est l'intermédiaire de confiance pour faciliter vos achats et ventes avec une sécurité garantie.
-                </p>
+                <img src="nima_logoFinal.png" alt="Nima" style="height: 50px; width: auto;">
+                <p>NIMA est l'intermédiaire de confiance pour faciliter vos achats et ventes avec une sécurité garantie.</p>
             </div>
             <div class="footer-sec socials">
                 <h3>Suivez-nous</h3>
                 <div class="social-icons">
-                    <a href="https://www.instagram.com/nima_niger?igsh=OHUzamtlNzE2ZnRz&utm_source=qr" target="_blank"
-                        title="Instagram NIMA" aria-label="Instagram">
+                    <a href="https://www.instagram.com/nima_niger?igsh=OHUzamtlNzE2ZnRz&utm_source=qr" target="_blank" title="Instagram NIMA" aria-label="Instagram">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
+                            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
                         </svg>
                     </a>
-                    <a href="https://www.tiktok.com/@nima8325?_r=1&_t=ZM-92QzlF3MJWW" target="_blank"
-                        title="TikTok NIMA" aria-label="TikTok">
+                    <a href="https://www.tiktok.com/@nima8325?_r=1&_t=ZM-92QzlF3MJWW" target="_blank" title="TikTok NIMA" aria-label="TikTok">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.85 4.85 0 01-1-.15z" />
+                            <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.75a8.18 8.18 0 004.77 1.52V6.84a4.85 4.85 0 01-1-.15z"/>
                         </svg>
                     </a>
-                    <a href="https://www.facebook.com/share/1DTiAnZHnp/?mibextid=wwXIfr" target="_blank"
-                        title="Facebook NIMA" aria-label="Facebook">
+                    <a href="https://www.facebook.com/share/1DTiAnZHnp/?mibextid=wwXIfr" target="_blank" title="Facebook NIMA" aria-label="Facebook">
                         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+                            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                         </svg>
                     </a>
                 </div>
@@ -565,16 +544,16 @@
             <div class="footer-sec apps" id="store-links">
                 <h3>Téléchargez l'application</h3>
                 <div class="store-buttons">
-                    <a href="https://play.google.com/store/apps/details?id=com.mycompany.nimaclient" target="_blank"
-                        class="store-btn-google"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333L13.5 12.707zM5.864 2.658L16.8 8.99l-2.302 2.302L6.864 2.658zM20.16 10.95c.549.394.84.91.84 1.05 0 .14-.291.656-.84 1.05l-2.43 1.41-2.534-2.46 2.534-2.46 2.43 1.41z" />
-                        </svg> Play Store</a>
-                    <a href="https://apps.apple.com/us/app/nima-achat-en-ligne-au-niger/id6759831417" target="_blank"
-                        class="store-btn-apple"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                        </svg> App Store</a>
+                    <a href="https://play.google.com/store/apps/details?id=com.mycompany.nimaclient" target="_blank" class="store-btn-google">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M3.609 1.814L13.792 12 3.61 22.186a.996.996 0 01-.61-.92V2.734a1 1 0 01.609-.92zm10.89 10.893l2.302 2.302-10.937 6.333L13.5 12.707zM5.864 2.658L16.8 8.99l-2.302 2.302L6.864 2.658zM20.16 10.95c.549.394.84.91.84 1.05 0 .14-.291.656-.84 1.05l-2.43 1.41-2.534-2.46 2.534-2.46 2.43 1.41z"/>
+                        </svg> Play Store
+                    </a>
+                    <a href="https://apps.apple.com/us/app/nima-achat-en-ligne-au-niger/id6759831417" target="_blank" class="store-btn-apple">
+                        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/>
+                        </svg> App Store
+                    </a>
                 </div>
             </div>
         </div>
@@ -604,15 +583,24 @@
             document.body.style.overflow = '';
         });
 
+        
+        
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mainNav.classList.remove('open');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+          link.addEventListener('click', (e) => {
+         hamburger.classList.remove('active');
+         mainNav.classList.remove('open');
+         overlay.classList.remove('active');
+         document.body.style.overflow = '';
+        
+         const href = link.getAttribute('href');
+         if (href && href !== '#') {
+            e.preventDefault();
+            setTimeout(() => {
+                window.location.href = href;
+            }, 150);
+           }
+          });
         });
-
         // === Header scroll ===
         window.addEventListener('scroll', () => {
             document.getElementById('mainHeader').classList.toggle('scrolled', window.scrollY > 50);
@@ -635,11 +623,11 @@
         }
 
         function scrollToContact() {
-            document.getElementById('contact-aide').scrollIntoView({ behavior: 'smooth' });
+            document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });
         }
 
         function copyTemplate() {
-            const text = `Objet : Demande de retour produit - Nima\n\nINFORMATIONS DE CONTACT\nNom : [Votre Nom]\nPrénom : [Votre Prénom]\nEmail : [Votre Email]\nN° de téléphone : [Votre Numéro]\n\nDÉTAILS DE LA COMMANDE\nID Commande : # [Numéro de commande]\n\nPIÈCES JOINTES REQUISES\n📸 Captures d'écran du produit\n🎥 Vidéo du produit\n\nMESSAGE DE LA DEMANDE\n[Expliquez ici la raison de votre retour]`;
+            const text = `Objet : Demande de retour produit - Nima\n\nINFORMATIONS DE CONTACT\nNom : [Votre Nom]\nPrénom : [Votre Prénom]\nEmail : [Votre Email]\nN° de téléphone : [Votre Numéro]\n\nDÉTAILS DE LA COMMANDE\nID Commande : # [Numéro de commande]\n\nPIÈCES JOINTES REQUISES\n📸 Captures d'écran du produit\n🎥 Vidéo du produit\n\nMESSAGE DE LA DEMANDE\n[Expliquez ici la raison de votre retour]\n\nJ'accepte et confirme avoir lu et pris connaissance de la politique de retour de Nima. Je confirme que toutes les informations mentionnées ci-dessus sont correctes et conformes à la politique.`;
             navigator.clipboard.writeText(text).then(() => {
                 const btn = document.querySelector('.copy-btn');
                 btn.textContent = 'Copié !';

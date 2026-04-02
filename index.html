@@ -375,7 +375,8 @@
     <!-- HEADER -->
     <header id="mainHeader">
         <a href="index.html" class="logo-link">
-            <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+            <img src="nima_logoFinal.png" alt="Nima" style="height: 50px; width: auto;">
+            
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span>
@@ -428,7 +429,7 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="phone_mockup.png" alt="Application NIMA sur smartphone" loading="eager">
+            <img src="phone_mockup.png" alt="Application NIMA sur smartphone" loading="eager" style="background: #1a0a2e; border-radius: 24px; padding: 10px;">
         </div>
     </section>
 
@@ -436,16 +437,16 @@
     <section class="stats-bar reveal">
         <div class="stats-grid">
             <div class="stat-item">
-                <span class="stat-number" data-target="500">0</span>
+                <span class="stat-number" data-target="Plusieurs" data-words="Beaucoup,Des centaines,Enormément,Plein,Plusieurs">0</span>
                 <span class="stat-label">Produits disponibles</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="6">0</span>
+                <span class="stat-number" data-target="N">0</span>
                 <span class="stat-label">Catégories</span>
             </div>
             <div class="stat-item">
-                <span class="stat-number" data-target="24">0</span>
-                <span class="stat-label">Livraison en heures</span>
+               <span class="stat-label" style="display:block; margin-bottom:6px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1rem; font-weight: 600;">Livraison en</span>
+               <span class="stat-number" data-target="24" data-suffix="h" style="background: none; -webkit-text-fill-color: #1a1a1a;">0</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number" data-target="100">0</span>
@@ -595,7 +596,7 @@
     <footer class="footer-pro">
         <div class="footer-content">
             <div class="footer-sec brandinfo">
-                <img class="logo" src="nima_logo_png_orange.png" alt="NIMA Logo">
+                <img src="nima_logoFinal.png" alt="Nima" style="height: 50px; width: auto;">
                 <p>NIMA est l'intermédiaire de confiance pour faciliter vos achats et ventes avec une sécurité garantie.
                 </p>
             </div>
@@ -669,12 +670,20 @@
 
         // Close on nav link click (mobile)
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', () => {
-                hamburger.classList.remove('active');
-                mainNav.classList.remove('open');
-                overlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+          link.addEventListener('click', (e) => {
+         hamburger.classList.remove('active');
+         mainNav.classList.remove('open');
+         overlay.classList.remove('active');
+         document.body.style.overflow = '';
+        
+         const href = link.getAttribute('href');
+         if (href && href !== '#') {
+            e.preventDefault();
+            setTimeout(() => {
+                window.location.href = href;
+            }, 150);
+           }
+          });
         });
 
         // === Header scroll effect ===
@@ -696,24 +705,67 @@
         revealElements.forEach(el => revealObserver.observe(el));
 
         // === Counter Animation ===
-        function animateCounters() {
-            const counters = document.querySelectorAll('.stat-number[data-target]');
-            counters.forEach(counter => {
-                const target = +counter.dataset.target;
-                const duration = 2000;
-                const startTime = performance.now();
+      function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number[data-target]');
+    counters.forEach(counter => {
+        const finalValue = counter.dataset.target;
+        const isNumber = !isNaN(finalValue);
+        const words = counter.dataset.words ? counter.dataset.words.split(',') : null;
 
-                function update(currentTime) {
-                    const elapsed = currentTime - startTime;
-                    const progress = Math.min(elapsed / duration, 1);
-                    const eased = 1 - Math.pow(1 - progress, 3);
-                    counter.textContent = Math.floor(target * eased);
-                    if (progress < 1) requestAnimationFrame(update);
-                    else counter.textContent = target;
+        if (words) {
+            // Défilement de mots
+            const duration = 2000;
+            const interval = 300; // temps entre chaque mot
+            let i = 0;
+
+            const wordTimer = setInterval(() => {
+                if (i < words.length - 1) {
+                    counter.textContent = words[i];
+                    i++;
+                } else {
+                    counter.textContent = finalValue;
+                    clearInterval(wordTimer);
                 }
-                requestAnimationFrame(update);
-            });
-        }
+            }, interval);
+
+        } else if (!isNumber) {
+            // Défilement de lettres aléatoires → lettre finale
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+            const duration = 2000;
+            const startTime = performance.now();
+
+            function updateText(currentTime) {
+                const elapsed = currentTime - startTime;
+                const progress = Math.min(elapsed / duration, 1);
+                if (progress < 1) {
+                    counter.textContent = letters[Math.floor(Math.random() * letters.length)];
+                    requestAnimationFrame(updateText);
+                } else {
+                    counter.textContent = finalValue;
+                }
+            }
+            requestAnimationFrame(updateText);
+
+        } else {
+    // Défilement normal de chiffres
+    const target = +finalValue;
+    const suffix = counter.dataset.suffix || ''; // récupère "h" si présent
+    const duration = 2000;
+    const startTime = performance.now();
+
+    function update(currentTime) {
+        const elapsed = currentTime - startTime;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        counter.textContent = Math.floor(target * eased) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+        else counter.textContent = target + suffix;
+    }
+    requestAnimationFrame(update);
+}
+    });
+}
+
 
         const statsSection = document.querySelector('.stats-bar');
         if (statsSection) {
