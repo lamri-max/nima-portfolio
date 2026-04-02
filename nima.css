@@ -364,7 +364,7 @@ nav ul a.active {
     gap: 60px;
     min-height: 85vh;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
 }
 
 .hero::before {

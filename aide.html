@@ -584,26 +584,22 @@ overlay.addEventListener('click', () => {
     document.body.style.overflow = '';
 });
 
-// Navigation depuis le menu hamburger uniquement
-const navLinks = mainNav.querySelectorAll('a');
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
+        document.querySelectorAll('nav a').forEach(link => {
+          link.addEventListener('click', (e) => {
+         hamburger.classList.remove('active');
+         mainNav.classList.remove('open');
+         overlay.classList.remove('active');
+         document.body.style.overflow = '';
         
-        // Fermer le menu
-        hamburger.classList.remove('active');
-        mainNav.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
-
-        // Naviguer vers la page
-        if (href && !href.startsWith('#')) {
+         const href = link.getAttribute('href');
+         if (href && !href.startsWith('#')) {
             e.preventDefault();
-            e.stopPropagation();
-            window.location.replace(href);
-        }
-    });
-});
+            setTimeout(() => {
+                window.location.href = href;
+            }, 150);
+           }
+          });
+        });
         // === Header scroll ===
         window.addEventListener('scroll', () => {
             document.getElementById('mainHeader').classList.toggle('scrolled', window.scrollY > 50);

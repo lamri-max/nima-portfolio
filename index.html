@@ -106,6 +106,122 @@
             line-height: 1.7;
         }
 
+        /* DISCOVER DROPDOWN */
+        .discover-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .discover-dropdown .btn.btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+            border: none;
+            font-family: inherit;
+        }
+
+        .discover-chevron {
+            transition: transform 0.3s var(--ease-smooth);
+            flex-shrink: 0;
+        }
+
+        .discover-dropdown.open .discover-chevron {
+            transform: rotate(180deg);
+        }
+
+        .discover-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 280px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15), 0 0 0 1px rgba(0, 0, 0, 0.05);
+            padding: 8px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(8px) scale(0.95);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            z-index: 100;
+            pointer-events: none;
+        }
+
+        .discover-dropdown.open .discover-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(8px) scale(1);
+            pointer-events: auto;
+        }
+
+        .discover-option {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 14px 16px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-primary, #1a1a1a);
+            transition: all 0.25s var(--ease-smooth);
+        }
+
+        .discover-option:hover {
+            background: rgba(255, 69, 0, 0.08);
+        }
+
+        .discover-option + .discover-option {
+            margin-top: 4px;
+        }
+
+        .discover-option-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: linear-gradient(135deg, rgba(255, 69, 0, 0.1), rgba(255, 140, 66, 0.1));
+            color: #FF4500;
+            transition: all 0.25s var(--ease-smooth);
+        }
+
+        .discover-option:hover .discover-option-icon {
+            background: linear-gradient(135deg, #FF4500, #FF8C42);
+            color: #fff;
+            transform: scale(1.05);
+        }
+
+        .discover-option-icon--video {
+            background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 69, 0, 0.1));
+            color: #e00;
+        }
+
+        .discover-option:hover .discover-option-icon--video {
+            background: linear-gradient(135deg, #e00, #FF4500);
+            color: #fff;
+        }
+
+        .discover-option-text {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+
+        .discover-option-text strong {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary, #1a1a1a);
+        }
+
+        .discover-option-text small {
+            font-size: 12px;
+            color: var(--text-secondary, #666);
+            font-weight: 400;
+        }
+
         /* DOWNLOAD SECTION */
         .download-hero {
             padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 80px);
@@ -363,6 +479,17 @@
             .dl-buttons a {
                 justify-content: center;
             }
+
+            .discover-menu {
+                left: 50%;
+                transform: translateX(-50%) translateY(8px) scale(0.95);
+                right: auto;
+                min-width: 260px;
+            }
+
+            .discover-dropdown.open .discover-menu {
+                transform: translateX(-50%) translateY(8px) scale(1);
+            }
         }
     </style>
 </head>
@@ -425,7 +552,40 @@
             </div>
             <div class="hero-buttons">
                 <a href="#store-links" class="btn btn-primary" id="hero-cta-download">Télécharger l'app</a>
-                <a href="apropos.html" class="btn btn-secondary">Découvrir NIMA</a>
+                <div class="discover-dropdown" id="discoverDropdown">
+                    <button class="btn btn-secondary" id="discoverBtn" aria-expanded="false" aria-haspopup="true">
+                        Découvrir NIMA
+                        <svg class="discover-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                    </button>
+                    <div class="discover-menu" id="discoverMenu">
+                        <a href="apropos.html" class="discover-option" id="discover-about">
+                            <span class="discover-option-icon">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                                </svg>
+                            </span>
+                            <span class="discover-option-text">
+                                <strong>À propos de NIMA</strong>
+                                <small>Notre histoire & mission</small>
+                            </span>
+                        </a>
+                        <a href="https://youtu.be/QIk3yniM2e8" target="_blank" rel="noopener noreferrer" class="discover-option" id="discover-video">
+                            <span class="discover-option-icon discover-option-icon--video">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </span>
+                            <span class="discover-option-text">
+                                <strong>Voir la vidéo</strong>
+                                <small>Découvrez NIMA en action</small>
+                            </span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="hero-image">
@@ -800,6 +960,33 @@ navLinks.forEach(link => {
             }, { threshold: 0.3 });
             statsObserver.observe(statsSection);
         }
+
+        // === Discover NIMA Dropdown ===
+        const discoverBtn = document.getElementById('discoverBtn');
+        const discoverDropdown = document.getElementById('discoverDropdown');
+
+        discoverBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const isOpen = discoverDropdown.classList.toggle('open');
+            discoverBtn.setAttribute('aria-expanded', isOpen);
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!discoverDropdown.contains(e.target)) {
+                discoverDropdown.classList.remove('open');
+                discoverBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
+
+        // Close dropdown on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                discoverDropdown.classList.remove('open');
+                discoverBtn.setAttribute('aria-expanded', 'false');
+            }
+        });
     </script>
 
 </body>
