@@ -649,24 +649,45 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // === Hamburger Menu ===
-        const hamburger = document.getElementById('hamburger');
-        const mainNav = document.getElementById('mainNav');
-        const overlay = document.getElementById('navOverlay');
+       // === Hamburger Menu ===
+const hamburger = document.getElementById('hamburger');
+const mainNav = document.getElementById('mainNav');
+const overlay = document.getElementById('navOverlay');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mainNav.classList.toggle('open');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
-        });
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mainNav.classList.toggle('open');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+});
 
-        overlay.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            mainNav.classList.remove('open');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
+overlay.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mainNav.classList.remove('open');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+// Navigation depuis le menu hamburger uniquement
+const navLinks = mainNav.querySelectorAll('a');
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        
+        // Fermer le menu
+        hamburger.classList.remove('active');
+        mainNav.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+
+        // Naviguer vers la page
+        if (href && !href.startsWith('#')) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.replace(href);
+        }
+    });
+});
 
         // Close on nav link click (mobile)
         document.querySelectorAll('nav a').forEach(link => {
