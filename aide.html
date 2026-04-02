@@ -564,43 +564,46 @@
 
     <!-- JAVASCRIPT -->
     <script>
-        // === Hamburger Menu ===
-        const hamburger = document.getElementById('hamburger');
-        const mainNav = document.getElementById('mainNav');
-        const overlay = document.getElementById('navOverlay');
-
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            mainNav.classList.toggle('open');
-            overlay.classList.toggle('active');
-            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
-        });
-
-        overlay.addEventListener('click', () => {
-            hamburger.classList.remove('active');
-            mainNav.classList.remove('open');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
-        });
-
         
-        
-        document.querySelectorAll('#mainNav a').forEach(link => {
-            link.addEventListener('click', (e) => {
-            hamburger.classList.remove('active');
-            mainNav.classList.remove('open');
-            overlay.classList.remove('active');
-            document.body.style.overflow = '';
+       // === Hamburger Menu ===
+const hamburger = document.getElementById('hamburger');
+const mainNav = document.getElementById('mainNav');
+const overlay = document.getElementById('navOverlay');
 
-            const href = link.getAttribute('href');
-                if (href && !href.startsWith('#')) {
-                e.preventDefault();
-               setTimeout(() => {
-                window.location.href = href;
-              }, 150);
-              }
-            });
-        });
+hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('active');
+    mainNav.classList.toggle('open');
+    overlay.classList.toggle('active');
+    document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+});
+
+overlay.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    mainNav.classList.remove('open');
+    overlay.classList.remove('active');
+    document.body.style.overflow = '';
+});
+
+// Navigation depuis le menu hamburger uniquement
+const navLinks = mainNav.querySelectorAll('a');
+navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+        const href = link.getAttribute('href');
+        
+        // Fermer le menu
+        hamburger.classList.remove('active');
+        mainNav.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+
+        // Naviguer vers la page
+        if (href && !href.startsWith('#')) {
+            e.preventDefault();
+            e.stopPropagation();
+            window.location.replace(href);
+        }
+    });
+});
         // === Header scroll ===
         window.addEventListener('scroll', () => {
             document.getElementById('mainHeader').classList.toggle('scrolled', window.scrollY > 50);
