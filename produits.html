@@ -324,20 +324,12 @@
         });
 
         document.querySelectorAll('nav a').forEach(link => {
-          link.addEventListener('click', (e) => {
-         hamburger.classList.remove('active');
-         mainNav.classList.remove('open');
-         overlay.classList.remove('active');
-         document.body.style.overflow = '';
-        
-         const href = link.getAttribute('href');
-         if (href && href !== '#') {
-            e.preventDefault();
-            setTimeout(() => {
-                window.location.href = href;
-            }, 150);
-           }
-          });
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mainNav.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
         });
 
         // === Header scroll ===

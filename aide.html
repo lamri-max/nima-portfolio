@@ -701,19 +701,11 @@
         });
 
         document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', (e) => {
+            link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
                 mainNav.classList.remove('open');
                 overlay.classList.remove('active');
                 document.body.style.overflow = '';
-
-                const href = link.getAttribute('href');
-                if (href && !href.startsWith('#')) {
-                    e.preventDefault();
-                    setTimeout(() => {
-                        window.location.href = href;
-                    }, 150);
-                }
             });
         });
         // === Header scroll ===
