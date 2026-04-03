@@ -171,7 +171,7 @@
             background: rgba(255, 69, 0, 0.08);
         }
 
-        .discover-option + .discover-option {
+        .discover-option+.discover-option {
             margin-top: 4px;
         }
 
@@ -503,7 +503,7 @@
     <header id="mainHeader">
         <a href="index.html" class="logo-link">
             <img src="nima_logoFinal.png" alt="Nima" style="height: 50px; width: auto;">
-            
+
         </a>
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span>
@@ -555,14 +555,16 @@
                 <div class="discover-dropdown" id="discoverDropdown">
                     <button class="btn btn-secondary" id="discoverBtn" aria-expanded="false" aria-haspopup="true">
                         Découvrir NIMA
-                        <svg class="discover-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="discover-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                             <polyline points="6 9 12 15 18 9"></polyline>
                         </svg>
                     </button>
                     <div class="discover-menu" id="discoverMenu">
                         <a href="apropos.html" class="discover-option" id="discover-about">
                             <span class="discover-option-icon">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <circle cx="12" cy="12" r="10"></circle>
                                     <line x1="12" y1="16" x2="12" y2="12"></line>
                                     <line x1="12" y1="8" x2="12.01" y2="8"></line>
@@ -573,9 +575,11 @@
                                 <small>Notre histoire & mission</small>
                             </span>
                         </a>
-                        <a href="https://youtu.be/QIk3yniM2e8" target="_blank" rel="noopener noreferrer" class="discover-option" id="discover-video">
+                        <a href="https://youtu.be/QIk3yniM2e8" target="_blank" rel="noopener noreferrer"
+                            class="discover-option" id="discover-video">
                             <span class="discover-option-icon discover-option-icon--video">
-                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                                     <polygon points="5 3 19 12 5 21 5 3"></polygon>
                                 </svg>
                             </span>
@@ -589,7 +593,8 @@
             </div>
         </div>
         <div class="hero-image">
-            <img src="phone_mockup.png" alt="Application NIMA sur smartphone" loading="eager" style="background: #1a0a2e; border-radius: 24px; padding: 10px;">
+            <img src="phone_mockup.png" alt="Application NIMA sur smartphone" loading="eager"
+                style="background: #1a0a2e; border-radius: 24px; padding: 10px;">
         </div>
     </section>
 
@@ -597,7 +602,8 @@
     <section class="stats-bar reveal">
         <div class="stats-grid">
             <div class="stat-item">
-                <span class="stat-number" data-target="Plusieurs" data-words="Beaucoup,Des centaines,Enormément,Plein,Plusieurs">0</span>
+                <span class="stat-number" data-target="Plusieurs"
+                    data-words="Beaucoup,Des centaines,Enormément,Plein,Plusieurs">0</span>
                 <span class="stat-label">Produits disponibles</span>
             </div>
             <div class="stat-item">
@@ -605,8 +611,11 @@
                 <span class="stat-label">Catégories</span>
             </div>
             <div class="stat-item">
-               <span class="stat-label" style="display:block; margin-bottom:6px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1rem; font-weight: 600;">Livraison en</span>
-               <span class="stat-number" data-target="24" data-suffix="h" style="background: none; -webkit-text-fill-color: #1a1a1a;">0</span>
+                <span class="stat-label"
+                    style="display:block; margin-bottom:6px; background: var(--gradient-primary); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1rem; font-weight: 600;">Livraison
+                    en</span>
+                <span class="stat-number" data-target="24" data-suffix="h"
+                    style="background: none; -webkit-text-fill-color: #1a1a1a;">0</span>
             </div>
             <div class="stat-item">
                 <span class="stat-number" data-target="100">0</span>
@@ -809,62 +818,62 @@
 
     <!-- JAVASCRIPT -->
     <script>
-       // === Hamburger Menu ===
-const hamburger = document.getElementById('hamburger');
-const mainNav = document.getElementById('mainNav');
-const overlay = document.getElementById('navOverlay');
+        // === Hamburger Menu ===
+        const hamburger = document.getElementById('hamburger');
+        const mainNav = document.getElementById('mainNav');
+        const overlay = document.getElementById('navOverlay');
 
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    mainNav.classList.toggle('open');
-    overlay.classList.toggle('active');
-    document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
-});
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            mainNav.classList.toggle('open');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = mainNav.classList.contains('open') ? 'hidden' : '';
+        });
 
-overlay.addEventListener('click', () => {
-    hamburger.classList.remove('active');
-    mainNav.classList.remove('open');
-    overlay.classList.remove('active');
-    document.body.style.overflow = '';
-});
+        overlay.addEventListener('click', () => {
+            hamburger.classList.remove('active');
+            mainNav.classList.remove('open');
+            overlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
 
-// Navigation depuis le menu hamburger uniquement
-const navLinks = mainNav.querySelectorAll('a');
-navLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-        const href = link.getAttribute('href');
-        
-        // Fermer le menu
-        hamburger.classList.remove('active');
-        mainNav.classList.remove('open');
-        overlay.classList.remove('active');
-        document.body.style.overflow = '';
+        // Navigation depuis le menu hamburger uniquement
+        const navLinks = mainNav.querySelectorAll('a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                const href = link.getAttribute('href');
 
-        // Naviguer vers la page
-        if (href && !href.startsWith('#')) {
-            e.preventDefault();
-            e.stopPropagation();
-            window.location.replace(href);
-        }
-    });
-});
+                // Fermer le menu
+                hamburger.classList.remove('active');
+                mainNav.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+
+                // Naviguer vers la page
+                if (href && !href.startsWith('#')) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    window.location.replace(href);
+                }
+            });
+        });
 
         // Close on nav link click (mobile)
         document.querySelectorAll('nav a').forEach(link => {
-          link.addEventListener('click', (e) => {
-         hamburger.classList.remove('active');
-         mainNav.classList.remove('open');
-         overlay.classList.remove('active');
-         document.body.style.overflow = '';
-        
-         const href = link.getAttribute('href');
-         if (href && href !== '#') {
-            e.preventDefault();
-            setTimeout(() => {
-                window.location.href = href;
-            }, 150);
-           }
-          });
+            link.addEventListener('click', (e) => {
+                hamburger.classList.remove('active');
+                mainNav.classList.remove('open');
+                overlay.classList.remove('active');
+                document.body.style.overflow = '';
+
+                const href = link.getAttribute('href');
+                if (href && href !== '#') {
+                    e.preventDefault();
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 150);
+                }
+            });
         });
 
         // === Header scroll effect ===
@@ -886,66 +895,66 @@ navLinks.forEach(link => {
         revealElements.forEach(el => revealObserver.observe(el));
 
         // === Counter Animation ===
-      function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number[data-target]');
-    counters.forEach(counter => {
-        const finalValue = counter.dataset.target;
-        const isNumber = !isNaN(finalValue);
-        const words = counter.dataset.words ? counter.dataset.words.split(',') : null;
+        function animateCounters() {
+            const counters = document.querySelectorAll('.stat-number[data-target]');
+            counters.forEach(counter => {
+                const finalValue = counter.dataset.target;
+                const isNumber = !isNaN(finalValue);
+                const words = counter.dataset.words ? counter.dataset.words.split(',') : null;
 
-        if (words) {
-            // Défilement de mots
-            const duration = 2000;
-            const interval = 300; // temps entre chaque mot
-            let i = 0;
+                if (words) {
+                    // Défilement de mots
+                    const duration = 2000;
+                    const interval = 300; // temps entre chaque mot
+                    let i = 0;
 
-            const wordTimer = setInterval(() => {
-                if (i < words.length - 1) {
-                    counter.textContent = words[i];
-                    i++;
-                } else {
-                    counter.textContent = finalValue;
-                    clearInterval(wordTimer);
-                }
-            }, interval);
+                    const wordTimer = setInterval(() => {
+                        if (i < words.length - 1) {
+                            counter.textContent = words[i];
+                            i++;
+                        } else {
+                            counter.textContent = finalValue;
+                            clearInterval(wordTimer);
+                        }
+                    }, interval);
 
-        } else if (!isNumber) {
-            // Défilement de lettres aléatoires → lettre finale
-            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
-            const duration = 2000;
-            const startTime = performance.now();
+                } else if (!isNumber) {
+                    // Défilement de lettres aléatoires → lettre finale
+                    const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
+                    const duration = 2000;
+                    const startTime = performance.now();
 
-            function updateText(currentTime) {
-                const elapsed = currentTime - startTime;
-                const progress = Math.min(elapsed / duration, 1);
-                if (progress < 1) {
-                    counter.textContent = letters[Math.floor(Math.random() * letters.length)];
+                    function updateText(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        if (progress < 1) {
+                            counter.textContent = letters[Math.floor(Math.random() * letters.length)];
+                            requestAnimationFrame(updateText);
+                        } else {
+                            counter.textContent = finalValue;
+                        }
+                    }
                     requestAnimationFrame(updateText);
+
                 } else {
-                    counter.textContent = finalValue;
+                    // Défilement normal de chiffres
+                    const target = +finalValue;
+                    const suffix = counter.dataset.suffix || ''; // récupère "h" si présent
+                    const duration = 2000;
+                    const startTime = performance.now();
+
+                    function update(currentTime) {
+                        const elapsed = currentTime - startTime;
+                        const progress = Math.min(elapsed / duration, 1);
+                        const eased = 1 - Math.pow(1 - progress, 3);
+                        counter.textContent = Math.floor(target * eased) + suffix;
+                        if (progress < 1) requestAnimationFrame(update);
+                        else counter.textContent = target + suffix;
+                    }
+                    requestAnimationFrame(update);
                 }
-            }
-            requestAnimationFrame(updateText);
-
-        } else {
-    // Défilement normal de chiffres
-    const target = +finalValue;
-    const suffix = counter.dataset.suffix || ''; // récupère "h" si présent
-    const duration = 2000;
-    const startTime = performance.now();
-
-    function update(currentTime) {
-        const elapsed = currentTime - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        counter.textContent = Math.floor(target * eased) + suffix;
-        if (progress < 1) requestAnimationFrame(update);
-        else counter.textContent = target + suffix;
-    }
-    requestAnimationFrame(update);
-}
-    });
-}
+            });
+        }
 
 
         const statsSection = document.querySelector('.stats-bar');
